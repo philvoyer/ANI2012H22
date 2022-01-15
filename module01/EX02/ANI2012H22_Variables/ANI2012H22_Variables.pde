@@ -1,7 +1,7 @@
 // ANI2012H22_Variables.pde
 // Exemples de déclaration et d'initialisation de variables de différents types.
 
-// 1. déclaration et initialisation de variables de types primitifs
+// 1. déclaration et initialisation de variables de types primitifs :
 
 // type | nom de la variable | valeur initiale |  poids en mémoire | description
 boolean   logic                = true;            // 8  bits         variable de type booléen (vrai ou faux)
@@ -11,7 +11,7 @@ int       integer              = 1024;            // 32 bits         variable nu
 float     realnumber           = 1.618f;          // 32 bits         variable numérique réelle (qui peut être non entière)
 double    hugenumber           = 1.618;           // 64 bits         variable numérique réelle (double précision)
 
-// 2. déclaration et initialisation de variables de types complexes
+// 2. déclaration et initialisation de variables de types complexes :
 
 // Les types complexes sont représentés par une 'classe'.
 // Une classe permet de spécifier toutes les caractéristiques d'un type (propriétés et méthodes).
