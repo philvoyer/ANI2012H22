@@ -19,6 +19,9 @@ void setup()
   // importer la police de caractères à partir du répertoire /data
   typo = loadFont("HelveticaNeue-Medium-64.vlw");
 
+  // configurer la police de caractères courante
+  textFont(typo);
+
   // calculer la position du centre de la fenêtre d'affichage
   positionX = width / 2.0f;
   positionY = height / 2.0f;
