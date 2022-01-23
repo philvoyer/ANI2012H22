@@ -15,3 +15,7 @@ Exemples d'introduction à la programmation.
 ## Module 1 : Primitive
 
 Introduction à la programmation avec la technologie *Processing*. Déclaration et initialisation de variables, types de variable primitifs et complexe, dessiner des primitives vectorielles simples, importer et afficher une image, afficher du texte, interactivité au clavier et à la souris, boucle de rendu, animation temps réel minimaliste.
+
+## Module 2 : Structure
+
+Expressions, opérateurs relationnels (**<**, **<=**, **>**, **>=**, **==**, **!=**), opérateurs logiques (**!**, **&&**, **||**), structures logiques (**if**, **else**, **else if**, **switch**), structures itératives (**for**, **while**, **do while**) et outils de déboguage.
