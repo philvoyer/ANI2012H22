@@ -8,7 +8,7 @@ Dans ce programme, nous avons plusieurs exemples où le flot d'exécution est co
 
 ### Exemple 2.2
 
-Dans ce programme, nous avons plusieurs exemples où le flot d'exécution est contrôlé par des structures itératives (**for**, **while**, **do while**).
+Dans ce programme, nous avons plusieurs exemples où le flot d'exécution est contrôlé par des structures itératives (**for** et **while**).
 
 ### Exemple 2.3
 
@@ -24,4 +24,14 @@ Le bouton devient plus grand et plus clair lorsque l'on passe par-dessus et plus
 
 ### Exemple 2.4
 
+Exemple d'un programme qui fait la génération procédurale d'un échiquier.
+
+La translation dans l'espace pour dessiner les cases est faite à partir de deux boucles **for** imbriquées.
+
+L'alternance entre les cases blanches et noires est fait en validant si l'index en X et Y sont tous les deux sont pairs ou impairs.
+
+Si un index est pair, alors l'opérateur de modulo **%**, qui retourne le reste de la division, va retourner 0 lorsque divisé par 2.
+
 ### Exemple 2.5
+
+Exemples de génération procédurale d'un échiquier avec la même approche que dans l'exemple précédent, mais avec une grille plus grande et animation de la case sélectionnée lors d'un déplacement avec les touches du clavier (flèches ou WASD).
