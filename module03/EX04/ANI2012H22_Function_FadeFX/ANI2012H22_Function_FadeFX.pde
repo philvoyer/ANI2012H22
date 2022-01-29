@@ -17,7 +17,7 @@ int colorBack = 15;
 
 // paramètre : niveau de transparence dans l'intervalle [0, 255]
 // l'effet est plus intéressant avec des valeurs assez basses, car l'estompement se fait sur une plus longue période de temps.
-float decay = 7;
+float currentIntensity = 7.0f;
 
 void setup()
 {
@@ -28,29 +28,37 @@ void setup()
 
 void draw()
 {
-  // dessiner le contenu de la scène normalement
+  // dessiner le contenu de la scène normalement (rien dans cet exemple)
   // ...
 
   // invocation de la fonction d'atténuation
-  fade(decay);
+  fade(currentIntensity);
 }
 
 // fonction qui atténue progressivement le contenu de la fenêtre
-void fade(float decay)
+void fade(float intensity)
 {
   // pas de ligne de contour
   noStroke();
 
   // couleur de remplissage de l'arrière-plan avec semi-transparence
-  fill(colorBack, decay);
+  fill(colorBack, intensity);
 
   // dessiner un rectangle qui recouvre toute la fenêtre d'affichage
   rect(0, 0, width, height);
 }
 
 // réinitialiser la couleur de remplissage quand une touche du clavier est relâchée
+// incrémenter et décrémenter l'intensité de l'effet avec les touches haut et bas.
 void keyReleased()
 {
+  if (keyCode == UP)
+    currentIntensity = clamp(++currentIntensity, 0.0f, 255.0f);
+  if (keyCode == DOWN)
+    currentIntensity = clamp(--currentIntensity, 0.0f, 255.0f);
+
+  println("current intensity: " + currentIntensity);
+
   background(255);
 }
 
@@ -58,4 +66,15 @@ void keyReleased()
 void mouseReleased()
 {
   background(255);
+}
+
+// fonction qui permet de borner un nombre réel entre une valeur minimale et maximale
+float clamp(float value, float min, float max)
+{
+  if (value < min)
+    return min;
+  else if (value > max)
+    return max;
+  else
+    return value;
 }
