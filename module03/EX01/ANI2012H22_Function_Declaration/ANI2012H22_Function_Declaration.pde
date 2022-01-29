@@ -71,22 +71,36 @@ int clamp(int value, int min, int max)
     return value;
 }
 
+// 10. fonction qui permet de borner un nombre réel entre une valeur minimale et maximale
+float clamp(float value, float min, float max)
+{
+  if (value < min)
+    return min;
+  else if (value > max)
+    return max;
+  else
+    return value;
+}
 
-// 10. tester les différentes fonctions avec un affichage dans la console
+
+// 11. appeler les différentes fonctions avec des arguments et afficher la valeur retournée dans la console
 void setup()
 {
-  println("identity  of 0     = " + identity(0));
-  println("inverse   of 1     = " + inverse(1));
-  println("inverse   of -1    = " + inverse(-1));
-  println("increment of 1     = " + incrementation(1));
-  println("decrement of 1     = " + decrementation(1));
-  println("addition  of 2 + 3 = " + addition(2, 3));
-  println("square    of 2     = " + square(2));
-  println("maximum   of 3 & 4 = " + maximum(3, 4));
-  println("maximum   of 5 & 5 = " + maximum(5, 5));
-  println("clamp (4, 3, 5)    = " + clamp(4, 3, 5));
-  println("clamp (2, 3, 5)    = " + clamp(2, 3, 5));
-  println("clamp (6, 3, 5)    = " + clamp(6, 3, 5));
+  println("identity  of 0        = " + identity(0));
+  println("inverse   of 1        = " + inverse(1));
+  println("inverse   of -1       = " + inverse(-1));
+  println("increment of 1        = " + incrementation(1));
+  println("decrement of 1        = " + decrementation(1));
+  println("addition  of 2 + 3    = " + addition(2, 3));
+  println("square    of 2        = " + square(2));
+  println("maximum   of 3 & 4    = " + maximum(3, 4));
+  println("maximum   of 5 & 5    = " + maximum(5, 5));
+  println("clamp (4, 3, 5)       = " + clamp(4, 3, 5));
+  println("clamp (2, 3, 5)       = " + clamp(2, 3, 5));
+  println("clamp (6, 3, 5)       = " + clamp(6, 3, 5));
+  println("clamp (1.5, 1.0, 2.0) = " + clamp(1.5f, 1.0f, 2.0f));
+  println("clamp (0.5, 1.0, 2.0) = " + clamp(0.5f, 1.0f, 2.0f));
+  println("clamp (2.5, 1.0, 2.0) = " + clamp(2.5f, 1.0f, 2.0f));
 
   println("then do nothing..");
 
