@@ -1,5 +1,5 @@
 // ANI2012H22_Fonction_Declaration.pde
-// Exemples déclarations et d'invocations de fonctions simples qui encapsulent des calculs mathématiques.
+// Exemples de déclarations et d'invocations de fonctions simples qui encapsulent des calculs mathématiques.
 // La plupart des fonctions reçoivent des nombres entiers en argument et retournent un nombre entier comme résultat.
 
 // 1. fonction vide sans entrée ni sortie qui ne fait strictement rien
