@@ -27,3 +27,17 @@ Voici 3 exemples de fonctions récursives :
 - Exemple d'une fonction récursive qui retourne le n-ième terme de la suite de Fibonacci. Un terme de la suite de Fibonacci est la somme des deux termes précédents de la suite pour tout nombre entier plus grand que 1
 
 - Exemple d'une fonction récursive qui génère une boucle infinie, car elle n'a pas de condition de sortie.
+
+### Exemple 3.4
+
+Exemple d'utilisation d'une fonction pour générer l'animation d'un estompement progressif en pleine fenêtre.
+
+L’estompement progressif est une animation où tout ce qui est dessiné dans la fenêtre disparait progressivement à chaque mise à jour de l’affichage pour finalement converger vers la couleur d’arrière-plan de la scène.
+
+Cet effet visuel est plutôt facile à réaliser et fait en sorte que le contenu de la fenêtre d'affichage change ou disparait progressivement au fil du temps.
+
+L'astuce est de ne pas effacer le contenu de la fenêtre d'affichage à chaque frame au début de la fonction *draw* et de plutôt dessiner un rectangle semi-transparent par-dessus tout le contenu de la fenêtre comme dernière étape de la fonction.
+
+Cet effet peut être ajouté assez facilement par-dessus n'importequel type de contenu visuel.
+
+Cette technique sera entre autres utilisée dans certains des exemples du cours pour créer un effet de persistance visuelle des éléments rendus dans la fenêtre d'affichage.
