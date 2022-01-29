@@ -41,3 +41,11 @@ L'astuce est de ne pas effacer le contenu de la fenêtre d'affichage à chaque f
 Cet effet peut être ajouté assez facilement par-dessus n'importequel type de contenu visuel.
 
 Cette technique sera entre autres utilisée dans certains des exemples du cours pour créer un effet de persistance visuelle des éléments rendus dans la fenêtre d'affichage.
+
+### Exemple 3.5
+
+Dans cet exemple, animation des résultats de différents exemples de boucles et utilisation de fonctions mathématiques de base.
+
+Le résultat de chaque boucle est encodé dans un dégradé de couleur, puis il est conservé dans un tableau à deux dimensions.
+
+Le tableau est animé avec un décalage des cases sur l'axe des colonnes qui vont boucler de manière perpétuelle.
