@@ -3,6 +3,7 @@
 // utilisation de fonctions mathématiques de base.
 // Le résultat de chaque boucle est encodé dans un dégradé de couleur,
 // puis il est conservé dans un tableau à deux dimensions.
+// Le tableau est animé avec un décalage des cases sur l'axe des colonnes qui vont boucler de manière perpétuelle.
 
 // paramètres
 int tileSize = 32;
