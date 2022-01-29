@@ -10,7 +10,7 @@
 // et de plutôt dessiner un rectangle semi-transparent par-dessus tout le contenu de la fenêtre comme dernière étape de la fonction.
 // Cet effet peut être ajouté assez facilement par-dessus n'importequel type de contenu visuel.
 
-// Cette technique sera  entre autres utilisée dans certains des exemples du cours pour créer un effet de persistance visuelle des éléments rendus dans la fenêtre d'affichage.
+// Cette technique sera entre autres utilisée dans certains des exemples du cours pour créer un effet de persistance visuelle des éléments rendus dans la fenêtre d'affichage.
 
 // paramètre : couleur d'arrière-plan
 int colorBack = 15;
