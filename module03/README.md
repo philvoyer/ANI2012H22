@@ -49,3 +49,13 @@ Dans cet exemple, animation des résultats de différents exemples de boucles et
 Le résultat de chaque boucle est encodé dans un dégradé de couleur, puis il est conservé dans un tableau à deux dimensions.
 
 Le tableau est animé avec un décalage des cases sur l'axe des colonnes qui vont boucler de manière perpétuelle.
+
+### Exemple 3.6
+
+Les chaînes de caractères sont un bon exemple d'application des tableaux.
+
+Chaque chaîne de caractères est une instance de **String**, une classe qui offre plusieurs fonctions pour construire et manipuler des données sous forme textuelle. 
+
+Une chaîne de caractères est aussi une structure de données où les caractères sont stockés dans une séquence ordonnée accessible à partir d'un indice dans un tableau à une dimension.
+
+Dans cet exemple, démonstration de différentes techniques pour créerr et manipuler des chaînes de caractères.
