@@ -2,7 +2,8 @@
 // Génération d'un échiquier avec animation de la case sélectionnée.
 
 // paramètres
-int dimension = 16;
+int tileCountX = 16;
+int tileCountY = 16;
 
 int colorBlack = 0;
 int colorWhite = 255;
@@ -10,12 +11,15 @@ int colorWhite = 255;
 color colorSelected = color(191, 0, 191);
 
 // variables
-int resolution;
-int diameter;
+int tileSizeX;
+int tileSizeY;
 
-int tileCount;
+float tilePositionX;
+float tilePositionY;
 
-int position;
+int tileCountTotal;
+
+int selectedTileIndex;
 
 boolean isKeyPressedUp = false;
 boolean isKeyPressedDown = false;
@@ -35,21 +39,21 @@ void setup()
   noStroke();
 
   // calculer le diamètre des cases en fonction de la résolution de la fenêtre
-  resolution = min(width, height);
-  diameter = resolution / dimension;
+  tileSizeX = width / tileCountX;
+  tileSizeY = height / tileCountY;
 
-  // calculer le nombre de cases dans l'échiquier
-  tileCount = dimension * dimension;
+  // calculer le nombre de cases
+  tileCountTotal = tileCountX * tileCountY;
 
   // choisir la position sélectionnée au hasard
-  position = int(random(dimension * dimension));
+  selectedTileIndex = int(random(tileCountTotal));
 }
 
 void draw()
 {
-  for (int indexY = 0; indexY < dimension; ++indexY)
+  for (int indexY = 0; indexY < tileCountY; ++indexY)
   {
-    for (int indexX = 0; indexX < dimension; ++indexX)
+    for (int indexX = 0; indexX < tileCountX; ++indexX)
     {
       // même principe que l'algorithme de l'exemple précédent, mais en plus compact
       if (indexX % 2 == indexY % 2)
@@ -57,11 +61,14 @@ void draw()
       else
         fill(colorWhite);
 
+      tilePositionX = tileSizeX * indexX;
+      tilePositionY = tileSizeY * indexY;
+
       rect(
-        diameter * indexX,
-        diameter * indexY,
-        diameter,
-        diameter);
+        tilePositionX,
+        tilePositionY,
+        tileSizeX,
+        tileSizeY);
     }
   }
 
@@ -70,10 +77,10 @@ void draw()
 
   // dessiner la case sélectionnée plus large que les autres
   rect(
-    diameter * (position % dimension) - diameter * 0.1f,
-    height - diameter * (position / dimension) - diameter - diameter * 0.1f,
-    diameter * 1.2f,
-    diameter * 1.2f);
+    tileSizeX * (selectedTileIndex % tileCountX) - tileSizeX * 0.1f,
+    tileSizeY * (selectedTileIndex / tileCountX) - tileSizeY * 0.1f,
+    tileSizeX * 1.2f,
+    tileSizeY * 1.2f);
 
   // mise à jour de la case sélectionnée
   updatePosition();
@@ -83,18 +90,18 @@ void draw()
 void updatePosition()
 {
   if (isKeyPressedUp    || isKeyPressedW)
-    position += dimension;
+    selectedTileIndex -= tileCountX;
   if (isKeyPressedDown  || isKeyPressedS)
-    position -= dimension;
+    selectedTileIndex += tileCountX;
   if (isKeyPressedLeft  || isKeyPressedA)
-    position -= 1;
+    selectedTileIndex -= 1;
   if (isKeyPressedRight || isKeyPressedD)
-    position += 1;
+    selectedTileIndex += 1;
 
-  if (position >= tileCount)
-    position -= tileCount;
-  else if (position < 0)
-    position += tileCount;
+  if (selectedTileIndex >= tileCountTotal)
+    selectedTileIndex -= tileCountTotal;
+  else if (selectedTileIndex < 0)
+    selectedTileIndex += tileCountTotal;
 }
 
 void keyPressed()
