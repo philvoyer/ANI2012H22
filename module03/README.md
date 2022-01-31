@@ -59,3 +59,7 @@ Chaque chaîne de caractères est une instance de **String**, une classe qui off
 Une chaîne de caractères est aussi une structure de données où les caractères sont stockés dans une séquence ordonnée accessible à partir d'un indice dans un tableau à une dimension.
 
 Dans cet exemple, démonstration de différentes techniques pour créerr et manipuler des chaînes de caractères.
+
+### Exemple 3.7
+
+Génération d'une grille avec animation de la case sélectionnée et possibilité de changer le contenu des cases avec le clavier et la souris.
