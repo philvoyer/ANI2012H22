@@ -13,7 +13,7 @@ color colorSelected = color(191, 0, 191);
 int resolution;
 int diameter;
 
-int cell;
+int tileCount;
 
 int position;
 
@@ -39,7 +39,7 @@ void setup()
   diameter = resolution / dimension;
 
   // calculer le nombre de cases dans l'échiquier
-  cell = dimension * dimension;
+  tileCount = dimension * dimension;
 
   // choisir la position sélectionnée au hasard
   position = int(random(dimension * dimension));
@@ -91,10 +91,10 @@ void updatePosition()
   if (isKeyPressedRight || isKeyPressedD)
     position += 1;
 
-  if (position >= cell)
-    position -= cell;
+  if (position >= tileCount)
+    position -= tileCount;
   else if (position < 0)
-    position += cell;
+    position += tileCount;
 }
 
 void keyPressed()
