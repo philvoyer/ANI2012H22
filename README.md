@@ -19,3 +19,11 @@ Introduction à la programmation avec la technologie *Processing*. Déclaration 
 ## Module 2 : Structure
 
 Expressions, opérateurs relationnels (**<**, **<=**, **>**, **>=**, **==**, **!=**), opérateurs logiques (**!**, **&&**, **||**), structures logiques (**if**, **else**, **else if**, **switch**), structures itératives (**for**, **while**, **do while**) et outils de déboguage.
+
+## Module 3 : Fonction
+
+Définition et appel de fonctions, paramètres et arguments.
+
+## Module 4 : Dessin
+
+Dessiner avec des primitives vectorielles.
