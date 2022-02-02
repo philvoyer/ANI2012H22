@@ -1,4 +1,4 @@
-# Module 4 : Dessin vectoriel 
+# Module 4 : Dessin
 
 Références du module 4.
 
