@@ -1,6 +1,6 @@
 # ANI2012H22
 
-## Module 4 : Dessin vectoriel
+## Module 4 : Dessin
 
 ### Exemple 2.1
 
