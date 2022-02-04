@@ -2,7 +2,7 @@
 
 ## Introduction
 
-### Exemple 0.1
+### Exemple 0.1 (OneInstructionProgram)
 
 Voici un premier exemple de programme avec une seule instruction.
 
@@ -14,7 +14,7 @@ Un commentaire est du texte qui fait partie d'un programme, mais qui est ignoré
 
 Avec le langage de programmation **Java**, qui est celui utilisé par *Processing*, un commentaire est soit une ligne qui commence par les caractères '**//**' ou sinon par un bloc de texte sur plusieurs lignes qui est délimité par les caractères '**/\***' au début et '**\*/**' à la fin.
 
-### Exemple 0.2
+### Exemple 0.2 (DrawText)
 
 Ce deuxième exemple de programme à cinq instructions.
 
@@ -30,7 +30,7 @@ La quatrième instruction configure la taille du texte.
 
 La cinquième et dernière instruction affiche une chaîne de caractère à une position située au centre de la fenêtre d'affichage.
 
-### Exemple 0.3
+### Exemple 0.3 (RotatingSquare)
 
 Dans ce troisième exemple, le programme anime un carré qui tourne autour du centre de la fenêtre d'affichage.
 
