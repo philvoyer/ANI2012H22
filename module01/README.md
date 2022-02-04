@@ -2,7 +2,7 @@
 
 ## Module 1 : Primitive
 
-### Exemple 1.1
+### Exemple 1.1 (Console)
 
 Un programme peut afficher des données dans une console sous forme textuelle.
 
@@ -16,7 +16,7 @@ Le texte à afficher dans la console peut avoir pour source une combinaison de c
 
 Dans cet exemple, le message *hello world* est affiché dans la console de l'éditeur de *Processing* de 4 manières différentes.
 
-### Exemple 1.2
+### Exemple 1.2 (Variables)
 
 Un programme symbolise les données avec lesquelles il travaille sous forme de variables.
 
@@ -30,7 +30,7 @@ Des exemples de types complexes sont les classes offertes par *Processing*, par 
 
 Dans cet exemple, différentes variables primitives et complexes sont déclarées et initialisées, puis leurs valeurs sont affichées dans la console.
 
-### Exemple 1.3
+### Exemple 1.3 (Numbers)
 
 Un programme peut manipuler des valeurs numériques de différents types (**int**, **float**, **double**) avec des opérateurs mathématiques tels que l'addition (**+**), la soustraction (**-**) la multiplication (**\***) et la division (**/** pour la partie entière et **%** pour le reste de la division).
 
@@ -42,7 +42,7 @@ Ensuite, différentes opérations mathématiques sont effectuées à partir de c
 
 Cet exemple démontre aussi comment créer une constante avec le mot clé **final**, c'est-à-dire une variable immuable, dont la valeur ne peut plus être changée après initialisation.
 
-### Exemple 1.4
+### Exemple 1.4 (DrawPrimives)
 
 Un programme peut dessiner des primitives vectorielles telles que des lignes, des rectangles et des ellipses.
 
@@ -52,7 +52,7 @@ Chaque appel de ces fonctions va dessiner une nouvelle instance de la primitive 
 
 Dans cet exemple, une image est générée à partir de quelques appels de différentes fonctions de dessin de primitives vectorielles et le contenu de la fenêtre d'affichage est ensuite sauvegardé dans un fichier image de type *.png*.
 
-### Exemple 1.5
+### Exemple 1.5 (FrameCounter)
 
 Un programme peut rendre une animation en temps réel s'il possède au moins une fonction d'initialisation et une fonction de mise à jour de l'affichage qui est appelée périodiquement.
 
@@ -70,7 +70,7 @@ Le programme incrémente une variable à chaque itération de cette fonction et 
 
 Par défaut, le programme s’exécute à 60 images par seconde, mais la cadence de rafraichissement peut être modifiée selon la valeur du paramètre de la fonction **frameRate**.
 
-### Exemple 1.6
+### Exemple 1.6 (DrawImage)
 
 Un programme peut importer une image en mémoire à partir d'un fichier externe pour ensuite la dessiner dans la fenêtre d'affichage.
 
@@ -82,7 +82,7 @@ Les données du fichier image sont importées en mémoire dans une instance de *
 
 Une classe est une spécification des propriétés (variables) et des méthodes (fonctions) qui caractérisent un type de donnée. Une classe permet donc de créer des instances indépendantes d'objets d'un certain type, comme dans ce cas, une image.
 
-### Exemple 1.7
+### Exemple 1.7 (DrawText)
 
 Un programme peut importer une police de caractères présente sur l'ordinateur où il est exécuté pour ensuite l'utiliser afin d'afficher du texte à l'écran.
 
@@ -90,7 +90,7 @@ Afin de garantir que la police de caractères s'affiche correctement sur un ordi
 
 Dans cet exemple, la police de caractères *HelveticaNeue* est chargée en mémoire dans une instance de la classe **PFont** et elle est ensuite utilisée pour afficher le nom de la police de caractères au centre de la fenêtre d'affichage.
 
-### Exemple 1.8
+### Exemple 1.8 (Keyboard)
 
 Un programme peut utiliser les événements du clavier comme source d'interactivité.
 
@@ -98,13 +98,13 @@ Dans cet exemple, les événements du clavier sont utilisés pour afficher inter
 
 Les touches observées sont les flèches du clavier (haut, bas, gauche, droite), les touches WASD en minuscule et en majuscule ainsi que la barre d'espacement.
 
-### Exemple 1.9
+### Exemple 1.9 (Mouse)
 
 Un programme peut utiliser les événements de la souris comme source d'interactivité.
 
 Dans cet exemple, les événements de la souris sont utilisés pour afficher interactivement du texte dans la fenêtre d'affichage en fonction de la position et du mouvement du curseur et selon l'état enfoncé ou relâché de ses boutons.
 
-### Exemple 1.10
+### Exemple 1.10 (MoveImage)
 
 Un programme peut animer le mouvement d'un élément visuel en fonction d'événements interactifs.
 
