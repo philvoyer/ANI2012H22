@@ -2,19 +2,19 @@
 
 ## Module 3 : Fonction
 
-### Exemple 3.1
+### Exemple 3.1 (FunctionDeclaration)
 
 Exemples de déclarations et d'invocations de fonctions simples qui encapsulent des calculs mathématiques.
 
 La plupart des fonctions reçoivent des nombres entiers en argument et retournent un nombre entier comme résultat.
 
-### Exemple 3.2
+### Exemple 3.2 (FunctionRandom)
 
 Démonstration de différentes techniques pour générer des nombres aléatoires entiers ou réels.
 
 Les nombres aléatoires permettent d'initialiser et de modifier les attributs d'une animation pour la rendre moins prévisible.
 
-### Exemple 3.3
+### Exemple 3.3 (FunctionRecursive)
 
 Une fonction récursive est une fonction qui s'appelle elle-même.
 
@@ -28,7 +28,7 @@ Voici 3 exemples de fonctions récursives :
 
 - Exemple d'une fonction récursive qui génère une boucle infinie, car elle n'a pas de condition de sortie.
 
-### Exemple 3.4
+### Exemple 3.4 (FadeFX)
 
 Exemple d'utilisation d'une fonction pour générer l'animation d'un estompement progressif en pleine fenêtre.
 
@@ -42,7 +42,7 @@ Cet effet peut être ajouté assez facilement par-dessus n'importequel type de c
 
 Cette technique sera entre autres utilisée dans certains des exemples du cours pour créer un effet de persistance visuelle des éléments rendus dans la fenêtre d'affichage.
 
-### Exemple 3.5
+### Exemple 3.5 (LoopingGrid)
 
 Dans cet exemple, animation des résultats de différents exemples de boucles et utilisation de fonctions mathématiques de base.
 
@@ -50,7 +50,7 @@ Le résultat de chaque boucle est encodé dans un dégradé de couleur, puis il 
 
 Le tableau est animé avec un décalage des cases sur l'axe des colonnes qui vont boucler de manière perpétuelle.
 
-### Exemple 3.6
+### Exemple 3.6 (String)
 
 Les chaînes de caractères sont un bon exemple d'application des tableaux.
 
@@ -60,6 +60,6 @@ Une chaîne de caractères est aussi une structure de données où les caractèr
 
 Dans cet exemple, démonstration de différentes techniques pour créerr et manipuler des chaînes de caractères.
 
-### Exemple 3.7
+### Exemple 3.7 (Chessboard3)
 
 Génération d'une grille avec animation de la case sélectionnée et possibilité de changer le contenu des cases avec le clavier et la souris.
