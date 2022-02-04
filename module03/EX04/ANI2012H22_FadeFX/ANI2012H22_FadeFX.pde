@@ -1,4 +1,4 @@
-// ANI2012H22_Function_FadeFX.pde
+// ANI2012H22_FadeFX.pde
 // Exemple d'utilisation d'une fonction pour générer l'animation d'un estompement progressif en pleine fenêtre.
 
 // L’estompement progressif est une animation où tout ce qui est dessiné dans la fenêtre disparait progressivement à chaque mise à jour de l’affichage pour finalement converger vers la couleur d’arrière-plan de la scène.
