@@ -1,4 +1,4 @@
-// ANI2012H22_Function_Recursive.pde
+// ANI2012H22_FunctionRecursive.pde
 // Exemples de fonctions récursives.
 // Une fonction récursive est une fonction qui s'appelle elle-même.
 
