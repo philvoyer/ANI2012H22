@@ -1,4 +1,4 @@
-// ANI2012H22_Fonction_Declaration.pde
+// ANI2012H22_FonctionDeclaration.pde
 // Exemples de déclarations et d'invocations de fonctions simples qui encapsulent des calculs mathématiques.
 // La plupart des fonctions reçoivent des nombres entiers en argument et retournent un nombre entier comme résultat.
 
