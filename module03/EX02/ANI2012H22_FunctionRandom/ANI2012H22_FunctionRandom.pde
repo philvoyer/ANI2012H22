@@ -1,4 +1,4 @@
-// ANI2012H22_Function_Random.pde
+// ANI2012H22_FunctionRandom.pde
 // Démonstration de différentes techniques pour générer des nombres aléatoires entiers ou réels.
 // Les nombres aléatoires permettent d'initialiser et de modifier les attributs d'une animation pour la rendre moins prévisible.
 
