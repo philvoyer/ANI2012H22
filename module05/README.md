@@ -183,3 +183,32 @@ Le synthétiseur peut jouer les notes d'une gamme en DO majeur avec les touches 
 
 Le volume et la position panoramique des notes jouées par le synthétiseur peuvent être ajustés avec les flèches du clavier.
 
+### Exemple 5.10
+
+Un programme peut utiliser la vidéo comme source pour importer des images.
+
+Que ce soit à partir d'un fichier vidéo ou d'une caméra, le principe est sensiblement le même, c'est-à-dire que chacun des frames du flux vidéo est extrait sous forme d'une image qui peut être dessinée dans une fenêtre d'affichage.
+
+Les programmes qui utilisent la vidéo ont une dépendance vers une librairie.
+
+Pour l'installer, dans l'éditeur de Processing, il faut aller dans le menu *Tools* > *Add Tool...* > puis dans l'onglet *Libraries* et installer la librairie *Video | GStreamer-based video library for Processing*.
+
+#### Exemple 5.10.1 (Video1_Playback)
+
+Exemple de l'importation et de la lecture d'un fichier vidéo.
+
+La vidéo est une capture d'écran de l'exemple 3.10 en cours d'exécution.
+
+Une teinte verte est appliquée sur la vidéo.
+
+#### Exemple 5.10.2 (Video2_Capture1)
+
+Exemple de capture vidéo avec une caméra.
+
+#### Exemple 5.10.3 (Video3_Capture2)
+
+Exemple de capture vidéo avec une caméra et application d'une teinte de couleur.
+
+#### Exemple 5.10.4 (Video4_Capture3)
+
+Exemple de capture vidéo avec une caméra et application de différents filtres (touches 1-6).
