@@ -15,7 +15,7 @@ int indexX;
 int indexY;
 int indexB;
 
-int pattern;
+int mode;
 
 void setup()
 {
@@ -23,7 +23,7 @@ void setup()
 
   regenerate = true;
 
-  pattern = int(random(1.0f, 4.0f));
+  mode = int(random(1.0f, 4.0f));
 
   colorMode(HSB, maxValueHue, maxValueSaturation, maxValueBrightness);
 }
@@ -43,8 +43,8 @@ void generateGradient()
   {
     for (indexY = 0; indexY < resolution; ++indexY)
     {
-      // sélectionner la couleur selon les indices des boucles et le pattern
-      switch (pattern)
+      // sélectionner la couleur selon les indices des boucles et le mode
+      switch (mode)
       {
         case 1: // génération d'un arc-en-ciel en mode de couleur HSB avec dégradé de la teinte (hue)
           stroke(
@@ -86,21 +86,21 @@ void keyReleased()
 {
   if (key == '1')
   {
-    pattern = 1;
+    mode = 1;
     regenerate = true;
     println("ex1: dégradé de la teinte (hue)");
   }
 
   if (key == '2')
   {
-    pattern = 2;
+    mode = 2;
     regenerate = true;
     println("ex2: dégradé de la teinte (hue) et de la saturation");
   }
 
   if (key == '3')
   {
-    pattern = 3;
+    mode = 3;
     regenerate = true;
     println("ex3: dégradé de la teinte (hue), de la saturation et de 2 niveau de luminosité (brightness)");
   }
