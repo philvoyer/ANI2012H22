@@ -27,3 +27,7 @@ Définition et appel de fonctions, paramètres et arguments.
 ## Module 4 : Dessin
 
 Dessiner avec des primitives vectorielles.
+
+## Module 5 : Contenu
+
+Données externes, images, contenu audio et vidéo.
