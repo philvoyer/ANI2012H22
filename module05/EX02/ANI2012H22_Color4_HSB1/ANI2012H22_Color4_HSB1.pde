@@ -1,5 +1,5 @@
 // ANI2012H22_Color4_HSB1.pde
-// Animation en boucle d'un arc-en-ciel avec décalage sur l'axe horizontal.
+// Programme qui génère une animation en boucle d'un arc-en-ciel avec décalage sur l'axe horizontal.
 // Flèches en haut et en bas pour changer la vitesse de l'animation.
 // Flèches à gauche et à droite pour changer la direction de l'animation.
 // Barre d'espacement pour inverser la direction de l'animation.
