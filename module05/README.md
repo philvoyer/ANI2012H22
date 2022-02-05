@@ -161,3 +161,25 @@ Animation en boucle d'une séquence d'images.
 
 Animation en boucle d'une séquence d'images à l'endroit puis à l'envers à la moitié de la vitesse.
 
+### Exemple 5.9
+
+Un programme peut générer du contenu audio tel que des sons et de la musique.
+
+#### Exemple 5.9.1 (Audio1_File)
+
+Exemple où un son est chargé en mémoire à partir d'un fichier externe (*.mp3*).
+
+Le son peut ensuite être joué à partir d'une touche du clavier.
+
+#### Exemple 5.9.2 (Audio2_Input)
+
+Exemple d'un programme qui analyse le signal audio capté à partir du microphone l'ordinateur à partir de l'algorithme de transformation de Fourier (*Fast Fourrier Transform*) et de dessiner une représentation visuelle de l'intensité de chacune des bandes de fréquences.
+
+#### Exemple 5.9.3 (Audio3_Synth)
+
+Exemple d'un programme qui simule un synthétiseur qui peut de générer des notes de musiques.
+
+Le synthétiseur peut jouer les notes d'une gamme en DO majeur avec les touches de 1 à 8 du clavier.
+
+Le volume et la position panoramique des notes jouées par le synthétiseur peuvent être ajustés avec les flèches du clavier.
+
