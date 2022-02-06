@@ -197,7 +197,7 @@ Pour l'installer, dans l'éditeur de Processing, il faut aller dans le menu *Too
 
 Exemple de l'importation et de la lecture d'un fichier vidéo.
 
-La vidéo est une capture d'écran de l'exemple 3.10 en cours d'exécution.
+La vidéo est une capture d'écran de l'exemple 6.9 en cours d'exécution.
 
 Une teinte verte est appliquée sur la vidéo.
 
