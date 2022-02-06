@@ -74,7 +74,7 @@ Dans cet exemple, le programme dessine une courbe de Bézier cubique avec ses qu
 
 ### Exemple 2.12
 
-Dans cet exemple, une animation générative est créée à partir des principales notions théoriques de ce module : structures logiques, structures itératives et primitives vectorielles. 
+Dans cet exemple, une animation générative est créée à partir de structures logiques, des structures itératives et des primitives vectorielles. 
 
 À un intervalle régulier, des instances de primitives vectorielles sont dessinées avec des attributs aléatoires.
 
