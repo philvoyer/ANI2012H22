@@ -87,6 +87,9 @@ https://processing.org/examples/sequential.html
 Librairie Sound de Processing  
 https://processing.org/reference/libraries/sound/
 
+Processing : sound tutorial  
+https://processing.org/tutorials/sound
+
 Minim : An audio library that provides easy to use classes for playback, recording, analysis, and synthesis of sound  
 http://code.compartmental.net/tools/minim/
 
