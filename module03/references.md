@@ -39,3 +39,6 @@ https://processing.org/reference/noise_.html
 
 Fonction **noiseDetail**  
 https://processing.org/reference/noiseDetail_.html
+
+Tableau de données  
+https://processing.org/tutorials/arrays/
