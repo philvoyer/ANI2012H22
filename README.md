@@ -31,3 +31,7 @@ Dessiner avec des primitives vectorielles.
 ## Module 5 : Contenu
 
 Données externes, images, contenu audio et vidéo.
+
+## Module 6 : Objet
+
+Concepts théoriques en lien avec la programmation orientée objet et les collections, avec applications dans le domaine de l'animation.
