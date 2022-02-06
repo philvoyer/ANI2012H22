@@ -62,7 +62,7 @@ void draw()
   background(191);
 
   // boucler sur chacun des points
-  for (index = 0; index < count; index++)
+  for (index = 0; index < count; ++index)
   {
     // configurer la taille du point
     strokeWeight(table[index].radius);
