@@ -1,6 +1,6 @@
 # ANI2012H22
 
-## Module 5 : Contenu 
+## Module 5 : Contenu
 
 ### Exemple 5.1
 
