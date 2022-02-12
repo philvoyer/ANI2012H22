@@ -5,10 +5,10 @@
 float curveRadius = 220;
 
 // positions des quatre points de contrôle de la courbe de Bézier
-PVector p1 = new PVector(-curveRadius, 0, 0);
-PVector p2 = new PVector(-curveRadius / 2.0f, curveRadius, 0);
-PVector p3 = new PVector(curveRadius / 2.0f, curveRadius, 0);
-PVector p4 = new PVector(curveRadius, 0, 0);
+PVector p1 = new PVector(-curveRadius, 0);
+PVector p2 = new PVector(-curveRadius / 2.0f, curveRadius);
+PVector p3 = new PVector(curveRadius / 2.0f, curveRadius);
+PVector p4 = new PVector(curveRadius, 0);
 
 void setup()
 {
