@@ -44,8 +44,8 @@ void draw()
   // mise à jour des variables en lien avec le temps
   timeNow = millis();
   timeElapsed = (timeNow - timeLast) / 1000.0f;
-  timeDelay += timeElapsed;
   timeLast = timeNow;
+  timeDelay += timeElapsed;
 
   // estompement de ce qui est déjà dessiné dans la fenêtre
   fade(decay);
