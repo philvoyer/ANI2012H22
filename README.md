@@ -35,3 +35,7 @@ Données externes, images, contenu audio et vidéo.
 ## Module 6 : Objet
 
 Concepts théoriques en lien avec la programmation orientée objet et les collections, avec applications dans le domaine de l'animation.
+
+## Module 7 : Transformation
+
+Étude des concepts mathématiques d'espace, de transformation géométrique, de système de coordonnées, de vecteur, de matrice de transformation et de trigonométrie avec applications pour l'animation.
