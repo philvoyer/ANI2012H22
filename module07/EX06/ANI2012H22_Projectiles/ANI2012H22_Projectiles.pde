@@ -58,6 +58,7 @@ void setup()
   ellipseMode(CENTER);
 
   isShooting = false;
+
   timeNow = timeLast = timeElapsed = timeDelay = 0.0f;
 
   velocityX = 0.0f;
