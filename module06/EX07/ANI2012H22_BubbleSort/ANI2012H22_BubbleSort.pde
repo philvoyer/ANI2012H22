@@ -63,9 +63,10 @@ float offset;
 
 float radius;
 
+float timeNow;
+float timeLast;
 float timeElapsed;
 float timeDelay;
-float timeFrame;
 
 ArrayList<Ball> list;
 
@@ -81,9 +82,7 @@ void setup()
   ellipseMode(CENTER);
   textAlign(CENTER, CENTER);
 
-  timeElapsed = 0;
-  timeDelay = 0;
-  timeFrame = 0;
+  timeNow = timeLast = timeElapsed = timeDelay = 0.0f;
 
   // taille relative au canevas
   radius = height / 3.0f;
@@ -134,9 +133,11 @@ void setup()
 
 void draw()
 {
-  timeElapsed = (millis() - timeFrame) / 1000.0f;
+  // mise à jour des variables en lien avec le temps
+  timeNow = millis();
+  timeElapsed = (timeNow - timeLast) / 1000.0f;
+  timeLast = timeNow;
   timeDelay += timeElapsed;
-  timeFrame = millis();
 
   // estompement progressif du frame précédent
   noStroke();
