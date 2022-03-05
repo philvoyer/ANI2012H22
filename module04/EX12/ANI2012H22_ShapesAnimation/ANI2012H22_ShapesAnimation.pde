@@ -11,9 +11,10 @@ float diameter = 256.0f;
 float threshold = 0.6f;
 
 // variables
+float timeNow;
+float timeLast;
 float timeElapsed;
 float timeDelay;
-float timeFrame;
 
 boolean isActivePoint = true;
 boolean isActiveLine = false;
@@ -32,7 +33,7 @@ void setup()
 
   timeElapsed = 0.0f;
   timeDelay = 0.0f;
-  timeFrame = 0.0f;
+  timeLast = 0.0f;
 
   rectMode(CENTER);
   ellipseMode(CENTER);
@@ -41,9 +42,10 @@ void setup()
 void draw()
 {
   // mise à jour des variables en lien avec le temps
-  timeElapsed = (millis() - timeFrame) / 1000.0f;
+  timeNow = millis();
+  timeElapsed = (timeNow - timeLast) / 1000.0f;
   timeDelay += timeElapsed;
-  timeFrame = millis();
+  timeLast = timeNow;
 
   // estompement de ce qui est déjà dessiné dans la fenêtre
   fade(decay);
