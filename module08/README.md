@@ -6,8 +6,11 @@
 
 Exemple d'un programme qui simule un tempo en BPM (Beats Per Minutes).
 
-### Exemple 8.2
+### Exemple 8.2 (DigitalClock)
 
+Exemples d'éléments temporels affichés sous forme digitale.
+
+Le premier élément temporel affiche le temps courant, le second affiche la valeur courante d'un chronomètre qui commence au lancement du programme et le dernier affiche la valeur courante d'un chronomètre dont la vitesse est pondérée.
 
 ### Exemple 8.3
 
