@@ -14,6 +14,8 @@ float timeScaleDelta = 0.25f;
 
 float offsetHorizontal = 64.0f;
 
+boolean isTimelineActive = true;
+
 // variables
 float timelinePlayhead;
 float timelinePlayheadPosition;
@@ -28,8 +30,6 @@ float timelineMarkerHalfSize;
 float timeNow;
 float timeLast;
 float timeElapsed;
-
-boolean isTimelineActive = true;
 
 void setup()
 {
