@@ -28,6 +28,9 @@ void setup()
 {
   size(512, 512);
 
+  textSize(64);
+  textAlign(CENTER, CENTER);
+
   timeNow = timeLast = timeElapsed = timeDelay = timeBetweenBeat = 0.0f;
 
   // BPM initial
@@ -54,8 +57,6 @@ void draw()
 
   // affichage à l'écran
   fill(255);
-  textSize(64);
-  textAlign(CENTER, CENTER);
   text("BPM", width/2, height/2 - 32);
   text(round(bpm), width/2, height/2 + 32);
 
