@@ -79,7 +79,7 @@ void draw()
   textSize(64);
   text(currentTimeChrono, width/2, height/2 + 32);
   textSize(32);
-  text("Chronomètre x" + timeScale, width/2, height/2 + 112);
+  text("Chronomètre à " + timeScale + " x", width/2, height/2 + 112);
   textSize(64);
   text(currentTimeScaled, width/2, height/2 + 160);
 }
