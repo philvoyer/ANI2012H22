@@ -52,7 +52,7 @@ void draw()
   text("Presser une touche de 1 à 8 pour jouer une note.", width / 2.0f, height / 2.0f);
 }
 
-// fonction qui permet de jouer une note certaine fréquence
+// fonction qui permet de jouer une note en fonction d'une fréquence
 void playNote(float f)
 {
   frequency = f;
