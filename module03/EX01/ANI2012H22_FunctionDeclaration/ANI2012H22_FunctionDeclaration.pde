@@ -61,6 +61,7 @@ int maximum(int n1, int n2)
 
 
 // 9. fonction qui permet de borner un nombre entier entre une valeur minimale et maximale
+// cette fonction est équivalente à la fonction 'constrain' de Processing
 int clamp(int value, int min, int max)
 {
   if (value < min)
@@ -71,7 +72,9 @@ int clamp(int value, int min, int max)
     return value;
 }
 
+
 // 10. fonction qui permet de borner un nombre réel entre une valeur minimale et maximale
+// cette fonction est équivalente à la fonction 'constrain' de Processing
 float clamp(float value, float min, float max)
 {
   if (value < min)
