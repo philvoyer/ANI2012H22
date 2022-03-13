@@ -45,7 +45,7 @@ void setup()
   timelinePositionStartX = offsetHorizontal;
   timelinePositionStartY = height / 2;
   timelinePositionEndX = width - offsetHorizontal;
-  timelinePositionEndY = height / 2;
+  timelinePositionEndY = timelinePositionStartY;
   timelinePositionDelta = timelinePositionEndX - timelinePositionStartX;
   timelineMarkerHalfSize = 32.0f;
 }
