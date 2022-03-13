@@ -90,24 +90,14 @@ void fade(float intensity)
   rect(0, 0, width, height);
 }
 
-float clamp(float value, float min, float max)
-{
-  if (value < min)
-    return min;
-  else if (value > max)
-    return max;
-  else
-    return value;
-}
-
 void keyReleased()
 {
   float bpmNew = bpm;
 
   if (keyCode == UP)
-    bpmNew = clamp(bpm + bpmDelta, bpmMin, bpmMax);
+    bpmNew = constrain(bpm + bpmDelta, bpmMin, bpmMax);
   if (keyCode == DOWN)
-    bpmNew = clamp(bpm - bpmDelta, bpmMin, bpmMax);
+    bpmNew = constrain(bpm - bpmDelta, bpmMin, bpmMax);
 
   changeBPM(bpmNew);
 }
