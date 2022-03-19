@@ -69,8 +69,7 @@ void setup()
 
   stickerRadius = stickerRadiusRatio * diskRadius;
 
-  rpm = 33.0f;
-  angleDelta = rpm / 60.0f;
+  changeRPM(33);
 
   isTurntableActive = true;
 }
@@ -141,7 +140,7 @@ void changeRPM(float rpmNew)
 {
   println("change turntable RPM from: " + rpm + " to: " + rpmNew);
   rpm = rpmNew;
-  angleDelta = angleDelta; // TODO
+  angleDelta = rpm * 2 * PI / 60.0f;
 }
 
 void keyReleased()
