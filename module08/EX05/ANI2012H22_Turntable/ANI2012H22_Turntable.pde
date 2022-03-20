@@ -34,21 +34,20 @@ float timeNow;
 float timeLast;
 float timeElapsed;
 
-float pointerCurrentX;
-float pointerCurrentY;
+float angleCurrent;
+float anglePrevious;
+float angleDelta;
 
 float pointerLastX;
 float pointerLastY;
 
+float pointerCurrentX;
+float pointerCurrentY;
+
 float pointerDeltaX;
 float pointerDeltaY;
 
-float scratchVelocityX;
-float scratchVelocityY;
-
-float angleCurrent;
-float anglePrevious;
-float angleDelta;
+boolean isMousePressed;
 
 void setup()
 {
@@ -72,6 +71,7 @@ void setup()
   changeRPM(33);
 
   isTurntableActive = true;
+  isMousePressed = false;
 }
 
 void draw()
@@ -83,11 +83,17 @@ void draw()
   timeElapsed = (timeNow - timeLast) / 1000.0f;
   timeLast = timeNow;
 
-  //println("time elapsed: " + timeElapsed);
+  // calculer le scratch
+  updateScratch();
 
   // faire tourner le disque seulement si la table tournante est active
   if (isTurntableActive)
-    angleCurrent += angleDelta * timeElapsed;
+  {
+    if (!isMousePressed)
+      angleCurrent += angleDelta * timeElapsed;
+    else
+      applyScratch();
+  }
 
   // dessiner le disque dans son orientation acutelle
   drawDisk();
@@ -95,6 +101,39 @@ void draw()
   // afficher le RPM
   fill(255);
   text("RPM " + round(rpm), width/2, height - height/16);
+}
+
+void updateScratch()
+{
+  if (isMousePressed)
+  {
+    pointerLastX = pointerCurrentX;
+    pointerLastY = pointerCurrentY;
+
+    pointerCurrentX = mouseX;
+    pointerCurrentY = mouseY;
+
+    pointerDeltaX = pointerCurrentX - pointerLastX;
+    pointerDeltaY = pointerCurrentY - pointerLastY;
+  }
+}
+
+void applyScratch()
+{
+  if (abs(pointerDeltaX) > abs(pointerDeltaY))
+  {
+    if (pointerCurrentY > diskCenterY)
+      angleCurrent -= pointerDeltaX * timeElapsed;
+    else
+      angleCurrent += pointerDeltaX * timeElapsed;
+  }
+  else
+  {
+    if (pointerCurrentX > diskCenterX)
+      angleCurrent += pointerDeltaY * timeElapsed;
+    else
+      angleCurrent -= pointerDeltaY * timeElapsed;
+  }
 }
 
 void drawDisk()
@@ -132,10 +171,6 @@ void drawDisk()
   line(0, 0, diskRadius/4, diskRadius/4);
 }
 
-void keyPressed()
-{
-}
-
 void changeRPM(float rpmNew)
 {
   println("change turntable RPM from: " + rpm + " to: " + rpmNew);
@@ -165,12 +200,13 @@ void keyReleased()
 
 void mousePressed()
 {
-  println("scratch position: " + mouseX + ", " + mouseY + " velocity: " + scratchVelocityX + ", " + scratchVelocityY);
+  isMousePressed = true;
 
-  //...
+  pointerCurrentX = pointerLastX = mouseX;
+  pointerCurrentY = pointerLastY = mouseY;
 }
 
 void mouseReleased()
 {
-  // reset something?
+  isMousePressed = false;
 }
