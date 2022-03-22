@@ -1,4 +1,4 @@
-// ANI2012H22_UserInterface.pde
+// ANI2012H22_UserInterface1.pde
 // Exemples d'utilisation de contrôles d'interface interactifs avec souris.
 // Démonstration d'un bouton, de cases à cocher, de boutons radio et d'une barre de progression.
 
