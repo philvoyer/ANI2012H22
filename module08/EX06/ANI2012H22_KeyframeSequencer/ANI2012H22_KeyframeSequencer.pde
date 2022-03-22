@@ -1,5 +1,6 @@
 // ANI2012H22_KeyframeSequencer.pde
 // Exemple d'un programme qui simule une animation faite avec des courbes d'animation et des poses clés.
+// ATTENTION : l'exemple est en cours de développement, il n'est pas terminé, mettez le à jour dans quelques heures.
 
 // paramètres
 float timelineDuration = 10.0f;
