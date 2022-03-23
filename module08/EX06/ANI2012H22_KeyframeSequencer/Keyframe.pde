@@ -3,13 +3,17 @@
 
 class Keyframe
 {
-  Keyframe()
+  float timestamp;
+  float value;
+
+  Keyframe(float keyframeTimestamp, float keyframeValue)
   {
+    timestamp = keyframeTimestamp;
+    value = keyframeValue;
   }
 
-
-  void print(String tag)
+  void print()
   {
-    // println(tag + " = (" + x + " " + y + " " + z +")");
+    println("keyframe timestamp: " + timestamp + " value: " + value);
   }
 }

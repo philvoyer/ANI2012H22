@@ -16,8 +16,11 @@ boolean isTimelineActive = true;
 
 // variables
 
+Sequencer sequencer;
+
 float keyframeTimestamp;
 float keyframeValue;
+
 float attributePositionX;
 float attributePositionY;
 float attributeRotation;
@@ -54,6 +57,8 @@ void setup()
   timelinePositionEndY = timelinePositionStartY;
   timelinePositionDelta = timelinePositionEndX - timelinePositionStartX;
   timelineMarkerHalfSize = 32.0f;
+  
+  sequencer = new Sequencer();
 }
 
 void draw()
@@ -65,7 +70,14 @@ void draw()
   timeElapsed = (timeNow - timeLast) / 1000.0f * timeScale;
   timeLast = timeNow;
 
-  // valider si la ligne du temps est active
+  updateTimeline();
+  
+  sequencer.update(timelinePlayhead);
+}
+
+void updateTimeline()
+{
+// valider si la ligne du temps est active
   if (isTimelineActive)
   {
     // mettre à jour la position de la tête de lecture sur la ligne du temps
