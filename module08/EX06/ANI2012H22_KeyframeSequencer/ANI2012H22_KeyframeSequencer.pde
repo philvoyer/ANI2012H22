@@ -19,9 +19,24 @@ float timeScaleMin = 0.25f;
 float timeScaleMax = 100.0f;
 float timeScaleDelta = 0.25f;
 
+float defaultAttributePositionX;
+float defaultAttributePositionY;
+float defaultAttributeRotation;
+float defaultAttributeScale = 64.0f;
+
+float interactiveAttributeScaleMin = 0.25f;
+float interactiveAttributeScaleMax = 100.0f;
+float interactiveAttributeScaleDelta = 0.25f;
+
+float interactiveAttributeRotationMin = 0.25f;
+float interactiveAttributeRotationMax = 100.0f;
+float interactiveAttributeRotationDelta = 0.25f;
+
 float offsetHorizontal = 64.0f;
 
 boolean isTimelineActive = true;
+
+int selectedAttribute = 1;
 
 // variables
 
@@ -35,6 +50,11 @@ float attributePositionX;
 float attributePositionY;
 float attributeRotation;
 float attributeScale;
+
+float interactiveAttributePositionX;
+float interactiveAttributePositionY;
+float interactiveAttributeRotation;
+float interactiveAttributeScale;
 
 float timelinePlayhead;
 float timelinePlayheadPosition;
@@ -50,11 +70,6 @@ float timeNow;
 float timeLast;
 float timeElapsed;
 
-float elementSize = 64.0f;
-
-int pointerPositionX;
-int pointerPositionY;
-
 void setup()
 {
   size(1024, 512);
@@ -66,14 +81,22 @@ void setup()
 
   timeNow = timeLast = timeElapsed = 0.0f;
 
+  // valuer initiale de la ligne du temps
   timelinePlayhead = 0.0f;
-
   timelinePositionStartX = offsetHorizontal;
   timelinePositionStartY = height - height / 8;
   timelinePositionEndX = width - offsetHorizontal;
   timelinePositionEndY = timelinePositionStartY;
   timelinePositionDelta = timelinePositionEndX - timelinePositionStartX;
   timelineMarkerHalfSize = 32.0f;
+
+  // valeur par défaut des attributs
+  defaultAttributePositionX = width/2;
+  defaultAttributePositionY = height/2;
+  
+  // valeur courante de l'outil d'animation
+  interactiveAttributeRotation = defaultAttributeRotation;
+  interactiveAttributeScale = defaultAttributeScale;
 
   // instancier un clip d'animation
   animationClip = new AnimationClip();
@@ -150,21 +173,21 @@ void updateTimeline()
 void updatePointer()
 {
   // garder une copie de la position courante du curseur
-  pointerPositionX = mouseX;
-  pointerPositionY = mouseY;
+  interactiveAttributePositionX = mouseX;
+  interactiveAttributePositionY = mouseY;
 
   // dessiner un aperçu de l'élément visuel avec la valeur courante des attributs d'animation
   stroke(0, 127);
   strokeWeight(4);
   fill(191, 64);
-  rect(pointerPositionX, pointerPositionY, elementSize, elementSize);
+  rect(interactiveAttributePositionX, interactiveAttributePositionY, interactiveAttributeScale, interactiveAttributeScale);
 }
 
 void updateAnimation()
 {
   // mise à jour du séquenceur
   sequencer.update(timelinePlayhead);
-  
+
   // valeur courante des attributs d'animation
   attributePositionX = sequencer.attributeCurrentValuePositionX;
   attributePositionY = sequencer.attributeCurrentValuePositionY;
@@ -182,22 +205,68 @@ void keyPressed()
 {
   // modifier la vitesse du temps
   if (keyCode == UP)
-    timeScale = constrain(timeScale + timeScaleDelta, timeScaleMin, timeScaleMax);
+  {
+    switch (selectedAttribute)
+    {
+    case 1:
+      timeScale = constrain(timeScale + timeScaleDelta, timeScaleMin, timeScaleMax);
+      break;
+    case 2:
+      interactiveAttributeScale = constrain(interactiveAttributeScale + interactiveAttributeScaleDelta, interactiveAttributeScaleMin, interactiveAttributeScaleMax);
+      break;
+    case 3:
+      attributeRotation += 1.0f;
+      break;
+
+    default:
+      break;
+    }
+  }
   if (keyCode == DOWN)
-    timeScale = constrain(timeScale - timeScaleDelta, timeScaleMin, timeScaleMax);
+  {
+    switch (selectedAttribute)
+    {
+    case 1:
+      timeScale = constrain(timeScale - timeScaleDelta, timeScaleMin, timeScaleMax);
+      break;
+    case 2:
+      break;
+    default:
+      break;
+    }
+  }
 
   // état actif ou inactif de la ligne du temps
   if (key == ' ')
     isTimelineActive = !isTimelineActive;
 }
 
+void keyReleased()
+{
+  if (key == '1')
+    selectedAttribute = 1;
+  if (key == '2')
+    selectedAttribute = 2;
+  if (key == '3')
+    selectedAttribute = 3;
+  if (key == '4')
+    selectedAttribute = 4;
+  if (key == ' ')
+    saveFrame("render####.png");
+}
+
+void mousePressed()
+{
+  // TODO no alpha
+}
+
 void mouseReleased()
 {
   // valeur courante des attributs d'animation
-  attributePositionX = pointerPositionX;
-  attributePositionY = pointerPositionY;
-  attributeRotation = 0.0f;
-  attributeScale = elementSize;
+  attributePositionX = interactiveAttributePositionX;
+  attributePositionY = interactiveAttributePositionY;
+  attributeRotation = interactiveAttributeRotation;
+  attributeScale = interactiveAttributeScale;
 
   // enregistrer une pose clé sur chacune des courbes d'animation actives
   sequencer.record(timelinePlayhead, attributePositionX, attributePositionY, attributeRotation, attributeScale);

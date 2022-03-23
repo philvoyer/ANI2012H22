@@ -12,8 +12,7 @@ class Sequencer
   float attributeCurrentValueRotation;
   float attributeCurrentValueScale;
 
-  Sequencer() {
-  }
+  Sequencer() {}
 
   void update(float timelinePlayhead)
   {
