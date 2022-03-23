@@ -36,7 +36,9 @@ float offsetHorizontal = 64.0f;
 
 boolean isTimelineActive = true;
 
-int selectedAttribute = 1;
+int defaultInterpolationMode = 1;
+
+int defaultSelectedAttribute = 1;
 
 // variables
 
@@ -70,15 +72,18 @@ float timeNow;
 float timeLast;
 float timeElapsed;
 
+int selectedAttribute = defaultSelectedAttribute;
+int interpolationMode = defaultInterpolationMode;
+
 void setup()
 {
   size(1024, 512);
 
   textSize(32);
   textAlign(CENTER, CENTER);
-
   rectMode(CENTER);
 
+  // initialiser les variables temporeles
   timeNow = timeLast = timeElapsed = 0.0f;
 
   // valuer initiale de la ligne du temps
@@ -93,7 +98,7 @@ void setup()
   // valeur par défaut des attributs
   defaultAttributePositionX = width/2;
   defaultAttributePositionY = height/2;
-  
+
   // valeur courante de l'outil d'animation
   interactiveAttributeRotation = defaultAttributeRotation;
   interactiveAttributeScale = defaultAttributeScale;
@@ -201,11 +206,32 @@ void updateAnimation()
   rect(attributePositionX, attributePositionY, attributeScale, attributeScale);
 }
 
+void selectAttribute(int idAttribute)
+{
+  selectedAttribute = idAttribute;
+  
+  switch (selectedAttribute)
+  {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
+    break;
+
+  default:
+    break;
+  }
+  
+  println("change selected attribute to: " + selectedAttribute);
+}
+
 void keyPressed()
 {
   // modifier la vitesse du temps
   if (keyCode == UP)
   {
+    //
     switch (selectedAttribute)
     {
     case 1:
@@ -244,13 +270,13 @@ void keyPressed()
 void keyReleased()
 {
   if (key == '1')
-    selectedAttribute = 1;
+    selectAttribute(1);
   if (key == '2')
-    selectedAttribute = 2;
+    selectAttribute(2);
   if (key == '3')
-    selectedAttribute = 3;
+    selectAttribute(3);
   if (key == '4')
-    selectedAttribute = 4;
+    selectAttribute(4);
   if (key == ' ')
     saveFrame("render####.png");
 }
@@ -258,6 +284,7 @@ void keyReleased()
 void mousePressed()
 {
   // TODO no alpha
+  
 }
 
 void mouseReleased()
