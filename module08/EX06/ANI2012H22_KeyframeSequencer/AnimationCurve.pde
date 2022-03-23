@@ -3,13 +3,18 @@
 
 class AnimationCurve
 {
+  TreeMap<Float, Keyframe> keyframeCollection;
+
   AnimationCurve()
   {
+    keyframeCollection = new TreeMap<Float, Keyframe>();
   }
 
-
-  void print(String tag)
+  void print()
   {
-    // println(tag + " = (" + x + " " + y + " " + z +")");
+    println(" keyframe count: " + keyframeCollection.size());
+    for (float key : keyframeCollection.keySet()) {
+      System.out.println(key + " ,ID = "+ keyframeCollection.get(key) );
+    }
   }
 }

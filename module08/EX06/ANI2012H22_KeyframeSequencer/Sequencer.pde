@@ -3,8 +3,10 @@
 
 class Sequencer
 {
+  AnimationClip clip;
+
   float timeCurrent;
-  
+
   Sequencer()
   {
   }
@@ -13,8 +15,13 @@ class Sequencer
   {
     timeCurrent = timelinePlayhead;
   }
-  
-  void print(String tag)
+
+  void record(float attributePositionX, float attributePositionY, float attributeRotation, float attributeScale)
+  {
+    
+  }
+
+  void print()
   {
     // println(tag + " = (" + x + " " + y + " " + z +")");
   }

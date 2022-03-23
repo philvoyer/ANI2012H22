@@ -2,6 +2,15 @@
 // Exemple d'un programme qui simule une animation faite avec des courbes d'animation et des poses clés.
 // ATTENTION : l'exemple est en cours de développement, il n'est pas terminé, mettez le à jour dans quelques heures.
 
+// The TreeMap class sorts the map values in ascending order.
+// It also implements the SortedMap interface internally, so a map instance is created using a new keyword.
+//The interface has the methods:
+//keySet() which returns a set of the keys in ascending order
+//values() which returns a collection of all values in the ascending order of the corresponding keys
+//import java.util.TreeMap;
+
+import java.util.TreeMap;
+
 // paramètres
 float timelineDuration = 10.0f;
 
@@ -17,6 +26,7 @@ boolean isTimelineActive = true;
 // variables
 
 Sequencer sequencer;
+AnimationClip animationClip;
 
 float keyframeTimestamp;
 float keyframeValue;
@@ -57,8 +67,13 @@ void setup()
   timelinePositionEndY = timelinePositionStartY;
   timelinePositionDelta = timelinePositionEndX - timelinePositionStartX;
   timelineMarkerHalfSize = 32.0f;
-  
+
+  //
+  animationClip = new AnimationClip(); //<>//
+
+  //
   sequencer = new Sequencer();
+  sequencer.clip = animationClip;
 }
 
 void draw()
@@ -70,8 +85,10 @@ void draw()
   timeElapsed = (timeNow - timeLast) / 1000.0f * timeScale;
   timeLast = timeNow;
 
+  //
   updateTimeline();
-  
+
+  //
   sequencer.update(timelinePlayhead);
 }
 
@@ -116,12 +133,6 @@ void updateTimeline()
   stroke(0);
   strokeWeight(2);
   line(timelinePlayheadPosition, timelinePositionStartY - timelineMarkerHalfSize, timelinePlayheadPosition, timelinePositionStartY + timelineMarkerHalfSize);
-
-  // afficher le temps courant
-  //text("Temps courant", width/2, height - height/4 - 64);
-  //text(timelinePlayhead, width/2, height - height/4 - 32);
-  //text("Vitesse du temps" , width/2, height - height/4);
-  //text(timeScale + " x", width/2, height - height/4 + 32);
 }
 
 void keyPressed()
@@ -144,11 +155,10 @@ void mousePressed()
 
 void mouseReleased()
 {
-  keyframeTimestamp = 0;
-  keyframeValue = 0;
-  attributePositionX = 0;
-  attributePositionY = 0;
+  attributePositionX = mouseX;
+  attributePositionY = mouseY;
   attributeRotation = 0;
-  attributeScale = 0;
+  attributeScale = 1;
 
+  sequencer.record(attributePositionX, attributePositionY, attributeRotation, attributeScale);
 }
