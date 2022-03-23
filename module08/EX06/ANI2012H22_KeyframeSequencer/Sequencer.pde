@@ -1,4 +1,4 @@
-// ANI2012H22_KeyframeSequencer/Sequencer.pde
+// ANI2012H22_KeyframeSequencer/Sequencer.pde //<>// //<>//
 // Classe de type Sequencer
 
 class Sequencer
@@ -12,7 +12,8 @@ class Sequencer
   float attributeCurrentValueRotation;
   float attributeCurrentValueScale;
 
-  Sequencer() {}
+  Sequencer() {
+  }
 
   void update(float timelinePlayhead)
   {
@@ -28,17 +29,17 @@ class Sequencer
   void record(float timestamp, float attributePositionX, float attributePositionY, float attributeRotation, float attributeScale)
   {
     println("sequencer record new keyframes at: " + timestamp);
-    
+
     //
     clip.updateExtents(timestamp);
-    
+
     //
     clip.curveCollection.get("positionX").addKeyframe(timestamp, attributePositionX);
     clip.curveCollection.get("positionY").addKeyframe(timestamp, attributePositionY);
     clip.curveCollection.get("rotation").addKeyframe(timestamp, attributeRotation);
     clip.curveCollection.get("scale").addKeyframe(timestamp, attributeScale);
   }
-  
+
   //
   float evaluate(String attributeName, float timestamp)
   {
@@ -56,11 +57,11 @@ class Sequencer
     float progression;
 
     AnimationCurve curve;
-    
+
     //
     if (timestamp < clip.start || timestamp > clip.end)
       return 0.0f;
-    else 
+    else
     {
       //
       curve = clip.curveCollection.get(attributeName);
@@ -76,8 +77,7 @@ class Sequencer
             keyframe1 = curve.keyframeCollection.get(keyframeTimestamp);
             keyframeTimestamp1 = keyframe1.timestamp;
             keyframeValue1 = keyframe1.value;
-          } 
-          else
+          } else
           {
             //
             keyframe2 = curve.keyframeCollection.get(keyframeTimestamp);
@@ -85,8 +85,8 @@ class Sequencer
             keyframeValue2 = keyframe2.value;
 
             //
-            progression = (timestamp - keyframeTimestamp1) / (keyframeTimestamp2 - keyframeTimestamp1); //<>//
-            
+            progression = (timestamp - keyframeTimestamp1) / (keyframeTimestamp2 - keyframeTimestamp1);
+
             // interpolation linéaire entre la valeurs des 2 poses clés
             valueInterpolated = interpolationLinear(keyframeValue1, keyframeValue2, progression);
 
@@ -105,18 +105,6 @@ class Sequencer
   // fonction qui calcule une interpolation linéaire entre deux valeurs numériques
   float interpolationLinear(float value1, float value2, float t)
   {
-    if (t < 0.0f) //<>//
-      return value1;
-
-    if (t > 1.0f)
-      return value2;
-
-    return (1.0f - t) * value1 + t * value2;
-  }
-  
-  // fonction qui calcule une interpolation entre deux valeurs numériques avec la fonction 'smoothstep'
-  float interpolationSmoothstep(float value1, float value2, float t)
-  {
     if (t < 0.0f)
       return value1;
 
@@ -126,30 +114,17 @@ class Sequencer
     return (1.0f - t) * value1 + t * value2;
   }
 
+  // fonction qui calcule une interpolation entre deux valeurs numériques avec la fonction 'smoothstep'
+  float interpolationSmoothstep(float value1, float value2, float t)
+  {
+    if (t < 0.0f)
+      return t = 0.0;
 
-  //def lerp(x1, x2, t):
-  //"""fonction qui calcule une interpolation linéaire entre deux valeurs numériques"""
+    if (t > 1.0f)
+      return t = 1.0;
 
-  //if t < 0.0:
-  //  return x1
-
-  //if t > 1.0:
-  //  return x2
-
-  //return (1.0 - t) * x1 + t * x2
-
-  //def smoothstep(x1, x2, t):
-  //"""fonction qui calcule une interpolation deux valeurs numériques avec accélération et décélération"""
-
-  //if t < 0.0:
-  //  t = 0.0
-
-  //if t > 1.0:
-  //  t = 1.0
-
-  //t = t * t * (3.0 - 2.0 * t)
-
-  //return (1.0 - t) * x1 + t * x2
+    return t = t * t * (3.0f - 2.0f * t)
+  }
 
   void print()
   {
