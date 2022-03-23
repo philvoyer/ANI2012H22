@@ -5,9 +5,24 @@ class AnimationCurve
 {
   TreeMap<Float, Keyframe> keyframeCollection;
 
-  AnimationCurve()
+  boolean isActive;
+  
+  String attributeName;
+  
+  AnimationCurve(String attributeName)
   {
     keyframeCollection = new TreeMap<Float, Keyframe>();
+    isActive = true;
+    attributeName = attributeName;
+  }
+
+  void addKeyframe(float keyframeTimestamp, float keyframeValue)
+  {
+    if (isActive)
+    {
+      keyframeCollection.put(keyframeTimestamp, new Keyframe(keyframeValue, keyframeValue));
+      println("add keyframe to animation curve '" + attributeName + "' at timestamp: " + keyframeTimestamp + " with value: " + keyframeValue + " count: " + keyframeCollection.size());
+    }
   }
 
   void print()

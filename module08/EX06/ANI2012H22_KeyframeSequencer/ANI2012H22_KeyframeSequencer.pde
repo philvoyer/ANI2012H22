@@ -104,7 +104,7 @@ void draw()
 
 void updateTimeline()
 {
-// valider si la ligne du temps est active
+  // valider si la ligne du temps est active
   if (isTimelineActive)
   {
     // mettre à jour la position de la tête de lecture sur la ligne du temps
@@ -178,6 +178,12 @@ void mousePressed()
 
 void mouseReleased()
 {
+  // valeur courante des attributs d'animation
+  attributePositionX = pointerPositionX;
+  attributePositionY = pointerPositionY;
+  attributeRotation = 0.0f;
+  attributeScale = 1.0f;
+  
   // enregistrer une pose clé sur chacune des courbes d'animation actives
-  sequencer.record(attributePositionX, attributePositionY, attributeRotation, attributeScale);
+  sequencer.record(timelinePlayhead, attributePositionX, attributePositionY, attributeRotation, attributeScale);
 }

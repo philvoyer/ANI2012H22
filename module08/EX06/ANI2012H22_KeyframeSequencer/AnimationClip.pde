@@ -10,10 +10,10 @@ class AnimationClip
     curveCollection = new TreeMap<String, AnimationCurve>();
 
     // ajouter des courbes d'animation dans la collection
-    curveCollection.put("translateX", new AnimationCurve());
-    curveCollection.put("translateY", new AnimationCurve());
-    curveCollection.put("rotation", new AnimationCurve());
-    curveCollection.put("scale", new AnimationCurve());
+    curveCollection.put("translateX", new AnimationCurve("translateX"));
+    curveCollection.put("translateY", new AnimationCurve("translateY"));
+    curveCollection.put("rotation", new AnimationCurve("rotation"));
+    curveCollection.put("scale", new AnimationCurve("scale"));
 
     print();
   }
