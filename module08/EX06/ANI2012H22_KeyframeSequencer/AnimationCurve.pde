@@ -7,21 +7,23 @@ class AnimationCurve
 
   boolean isActive;
   
-  String attributeName;
+  String name;
+  
+  Keyframe currentKeyframe;
   
   AnimationCurve(String attributeName)
   {
     keyframeCollection = new TreeMap<Float, Keyframe>();
     isActive = true;
-    attributeName = attributeName;
+    name = attributeName;
   }
 
   void addKeyframe(float keyframeTimestamp, float keyframeValue)
   {
     if (isActive)
     {
-      keyframeCollection.put(keyframeTimestamp, new Keyframe(keyframeValue, keyframeValue));
-      println("add keyframe to animation curve '" + attributeName + "' at timestamp: " + keyframeTimestamp + " with value: " + keyframeValue + " count: " + keyframeCollection.size());
+      keyframeCollection.put(keyframeTimestamp, new Keyframe(keyframeTimestamp, keyframeValue));
+      println("add keyframe to animation curve '" + name + "' at timestamp: " + keyframeTimestamp + " with value: " + keyframeValue + " count: " + keyframeCollection.size());
     }
   }
 

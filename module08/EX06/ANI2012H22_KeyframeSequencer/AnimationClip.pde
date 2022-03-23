@@ -5,17 +5,30 @@ class AnimationClip
 {
   TreeMap<String, AnimationCurve> curveCollection;
 
+  float start = Float.POSITIVE_INFINITY;
+  float end = Float.NEGATIVE_INFINITY;
+  
   AnimationClip()
   {
     curveCollection = new TreeMap<String, AnimationCurve>();
 
     // ajouter des courbes d'animation dans la collection
-    curveCollection.put("translateX", new AnimationCurve("translateX"));
-    curveCollection.put("translateY", new AnimationCurve("translateY"));
+    curveCollection.put("positionX", new AnimationCurve("positionX"));
+    curveCollection.put("positionY", new AnimationCurve("positionY"));
     curveCollection.put("rotation", new AnimationCurve("rotation"));
     curveCollection.put("scale", new AnimationCurve("scale"));
 
     print();
+  }
+  
+  void updateExtents(float timestamp)
+  {
+    if (timestamp <= start)
+      start = timestamp;
+    if (timestamp >= end)
+      end = timestamp;  
+      
+    println("update clip extents start: " + start + " end: " + end);
   }
 
   void print()

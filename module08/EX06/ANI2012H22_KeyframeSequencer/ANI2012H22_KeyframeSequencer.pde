@@ -75,11 +75,13 @@ void setup()
   timelinePositionDelta = timelinePositionEndX - timelinePositionStartX;
   timelineMarkerHalfSize = 32.0f;
 
-  //
+  // instancier un clip d'animation
   animationClip = new AnimationClip();
 
-  //
+  // instancier un séquencer
   sequencer = new Sequencer();
+
+  // faire le lien entre le séquenceur et le clip d'animation
   sequencer.clip = animationClip;
 }
 
@@ -98,8 +100,8 @@ void draw()
   // mise à jour du pointeur
   updatePointer();
 
-  // mise à jour du séquenceur
-  sequencer.update(timelinePlayhead);
+  // mise à jour de l'animation
+  updateAnimation();
 }
 
 void updateTimeline()
@@ -158,6 +160,24 @@ void updatePointer()
   rect(pointerPositionX, pointerPositionY, elementSize, elementSize);
 }
 
+void updateAnimation()
+{
+  // mise à jour du séquenceur
+  sequencer.update(timelinePlayhead);
+  
+  // valeur courante des attributs d'animation
+  attributePositionX = sequencer.attributeCurrentValuePositionX;
+  attributePositionY = sequencer.attributeCurrentValuePositionY;
+  attributeRotation = sequencer.attributeCurrentValueRotation;
+  attributeScale = sequencer.attributeCurrentValueScale;
+
+  // dessiner l'élément visuel avec la valeur courante de l'animation
+  stroke(0);
+  strokeWeight(4);
+  fill(255);
+  rect(attributePositionX, attributePositionY, attributeScale, attributeScale);
+}
+
 void keyPressed()
 {
   // modifier la vitesse du temps
@@ -171,19 +191,14 @@ void keyPressed()
     isTimelineActive = !isTimelineActive;
 }
 
-void mousePressed()
-{
-
-}
-
 void mouseReleased()
 {
   // valeur courante des attributs d'animation
   attributePositionX = pointerPositionX;
   attributePositionY = pointerPositionY;
   attributeRotation = 0.0f;
-  attributeScale = 1.0f;
-  
+  attributeScale = elementSize;
+
   // enregistrer une pose clé sur chacune des courbes d'animation actives
   sequencer.record(timelinePlayhead, attributePositionX, attributePositionY, attributeRotation, attributeScale);
 }
