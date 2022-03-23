@@ -50,12 +50,19 @@ float timeNow;
 float timeLast;
 float timeElapsed;
 
+float elementSize = 64.0f;
+
+int pointerPositionX;
+int pointerPositionY;
+
 void setup()
 {
   size(1024, 512);
 
   textSize(32);
   textAlign(CENTER, CENTER);
+
+  rectMode(CENTER);
 
   timeNow = timeLast = timeElapsed = 0.0f;
 
@@ -69,7 +76,7 @@ void setup()
   timelineMarkerHalfSize = 32.0f;
 
   //
-  animationClip = new AnimationClip(); //<>//
+  animationClip = new AnimationClip();
 
   //
   sequencer = new Sequencer();
@@ -85,10 +92,13 @@ void draw()
   timeElapsed = (timeNow - timeLast) / 1000.0f * timeScale;
   timeLast = timeNow;
 
-  //
+  // mise à jour de la ligne du temps
   updateTimeline();
 
-  //
+  // mise à jour du pointeur
+  updatePointer();
+
+  // mise à jour du séquenceur
   sequencer.update(timelinePlayhead);
 }
 
@@ -135,6 +145,19 @@ void updateTimeline()
   line(timelinePlayheadPosition, timelinePositionStartY - timelineMarkerHalfSize, timelinePlayheadPosition, timelinePositionStartY + timelineMarkerHalfSize);
 }
 
+void updatePointer()
+{
+  // garder une copie de la position courante du curseur
+  pointerPositionX = mouseX;
+  pointerPositionY = mouseY;
+
+  // dessiner un aperçu de l'élément visuel avec la valeur courante des attributs d'animation
+  stroke(0, 127);
+  strokeWeight(4);
+  fill(191, 64);
+  rect(pointerPositionX, pointerPositionY, elementSize, elementSize);
+}
+
 void keyPressed()
 {
   // modifier la vitesse du temps
@@ -155,10 +178,6 @@ void mousePressed()
 
 void mouseReleased()
 {
-  attributePositionX = mouseX;
-  attributePositionY = mouseY;
-  attributeRotation = 0;
-  attributeScale = 1;
-
+  // enregistrer une pose clé sur chacune des courbes d'animation actives
   sequencer.record(attributePositionX, attributePositionY, attributeRotation, attributeScale);
 }
