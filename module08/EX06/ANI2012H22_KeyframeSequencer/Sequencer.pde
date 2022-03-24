@@ -65,6 +65,8 @@ class Sequencer
     {
       //
       curve = clip.curveCollection.get(attributeName);
+      
+      //
       if (curve != null)
       {
         //
@@ -77,7 +79,8 @@ class Sequencer
             keyframe1 = curve.keyframeCollection.get(keyframeTimestamp);
             keyframeTimestamp1 = keyframe1.timestamp;
             keyframeValue1 = keyframe1.value;
-          } else
+          } 
+          else
           {
             //
             keyframe2 = curve.keyframeCollection.get(keyframeTimestamp);
@@ -88,7 +91,18 @@ class Sequencer
             progression = (timestamp - keyframeTimestamp1) / (keyframeTimestamp2 - keyframeTimestamp1);
 
             // interpolation linéaire entre la valeurs des 2 poses clés
-            valueInterpolated = interpolationLinear(keyframeValue1, keyframeValue2, progression);
+            switch (interpolationMode)
+            {
+              case 1:
+                valueInterpolated = interpolationLinear(keyframeValue1, keyframeValue2, progression);
+                break;
+              case 2:
+                valueInterpolated = interpolationSmoothstep(keyframeValue1, keyframeValue2, progression);
+                break;
+              default:
+                valueInterpolated = interpolationLinear(keyframeValue1, keyframeValue2, progression);
+                break;
+            }
 
             //if (attributeName == "positionX")
             //  println("progression: " + progression + " value: " + valueInterpolated);
@@ -123,7 +137,7 @@ class Sequencer
     if (t > 1.0f)
       return t = 1.0;
 
-    return t = t * t * (3.0f - 2.0f * t)
+    return t = t * t * (3.0f - 2.0f * t);
   }
 
   void print()

@@ -274,11 +274,11 @@ void keyReleased()
   if (key == '2')
     selectAttribute(2);
   if (key == '3')
-    selectAttribute(3);
+    interpolationMode = 1;
   if (key == '4')
-    selectAttribute(4);
-  if (key == ' ')
-    saveFrame("render####.png");
+    interpolationMode = 2;
+  //if (key == ' ')
+  //  saveFrame("render####.png");
 }
 
 void mousePressed()
