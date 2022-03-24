@@ -20,14 +20,14 @@ Exemple d'un programme qui simule une table tournante.
 
 Exemple d'un programme qui simule une ligne du temps.
 
-La ligne du temps à une durée, un marqueur de début, un marqueur de fin ainsi qu'une tête de lecture. 
+La ligne du temps à une durée, un marqueur de début, un marqueur de fin ainsi qu'une tête de lecture.
 
-Elle peut être activée et désactivée avec la barre d'espacement et la vitesse de lecture peut être augmentée et réduite avec les flêches en haut et en bas. 
+Elle peut être activée et désactivée avec la barre d'espacement et la vitesse de lecture peut être augmentée et réduite avec les flêches en haut et en bas.
 
-### Exemple 8.6 (StepSequencer)
+### Exemple 8.5 (StepSequencer)
 
 Exemple d'un programme qui simule un 'step sequencer', qui permet de jouer un échantillon à chaque étape si le bouton est activé.
 
-### Exemple 8.6 () 
+### Exemple 8.6 (KeyframeSequencer)
 
-
+Exemple d'un programme qui simule une animation faite avec des courbes d'animation et des poses clés.
