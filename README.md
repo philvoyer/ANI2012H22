@@ -39,3 +39,8 @@ Concepts théoriques en lien avec la programmation orientée objet et les collec
 ## Module 7 : Transformation
 
 Étude des concepts mathématiques d'espace, de transformation géométrique, de système de coordonnées, de vecteur, de matrice de transformation et de trigonométrie avec applications pour l'animation.
+
+## Module 8 : Timing
+
+Programmation appliquée à la création et la manipulation de lignes du temps, de poses clés, de courbes d'animation et d'interpolations entre des valeurs numériques.
+
