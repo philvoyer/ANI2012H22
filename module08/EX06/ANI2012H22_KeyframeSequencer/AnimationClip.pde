@@ -28,16 +28,15 @@ class AnimationClip
     if (timestamp >= end)
       end = timestamp;  
       
-    println("update clip extents start: " + start + " end: " + end);
+    println("update clip extents to start: " + start + " end: " + end);
   }
 
   void print()
   {
-    AnimationCurve animationCurve;
+    int curveIndex = 0;
+    println("animation clip with extents from start: " + start + " to end: " + end + " and animation curve count: " + curveCollection.size());
     for (String key : curveCollection.keySet()) {
-      animationCurve = curveCollection.get(key);
-      //animationCurve.print();
-      println("animation curve for attribute: " + key + " value: " + curveCollection.get(key));
+      println("animation curve " + ++curveIndex + " for attribute: '" + key + "' keyframe count: " + curveCollection.get(key).keyframeCollection.size());
     }
   }
 }

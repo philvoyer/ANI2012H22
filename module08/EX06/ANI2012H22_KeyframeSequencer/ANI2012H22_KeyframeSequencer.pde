@@ -33,6 +33,12 @@ int defaultInterpolationMode = 1;
 
 int defaultSelectedAttribute = 1;
 
+color colorPreviewStroke = color(0, 127);
+color colorPreviewFill = color(191, 164);
+
+color colorNormalStroke = color(0);
+color colorNormalFill = color(255);
+
 // variables
 Sequencer sequencer;
 AnimationClip animationClip;
@@ -67,6 +73,8 @@ float timeElapsed;
 int selectedAttribute = defaultSelectedAttribute;
 int interpolationMode = defaultInterpolationMode;
 
+boolean isMouseButtonPressed;
+
 void setup()
 {
   size(1024, 512);
@@ -74,6 +82,8 @@ void setup()
   textSize(32);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
+
+  isMouseButtonPressed = false;
 
   // initialiser les variables temporeles
   timeNow = timeLast = timeElapsed = 0.0f;
@@ -124,6 +134,7 @@ void draw()
   updateAnimation();
 }
 
+// fonction pour mettre à jour la ligne du temps
 void updateTimeline()
 {
   // valider si la ligne du temps est active
@@ -167,6 +178,7 @@ void updateTimeline()
   line(timelinePlayheadPosition, timelinePositionStartY - timelineMarkerHalfSize, timelinePlayheadPosition, timelinePositionStartY + timelineMarkerHalfSize);
 }
 
+// fonction pour mettre à jour l'aperçu de l'élément avec les attributs courants
 void updatePointer()
 {
   // garder une copie de la position courante du curseur
@@ -174,12 +186,23 @@ void updatePointer()
   interactiveAttributePositionY = mouseY;
 
   // dessiner un aperçu de l'élément visuel avec la valeur courante des attributs d'animation
-  stroke(0, 127);
-  strokeWeight(4);
-  fill(191, 64);
+  if (!isMouseButtonPressed)
+  {
+    strokeWeight(4);
+    stroke(colorPreviewStroke);
+    fill(colorPreviewFill);
+  } 
+  else
+  {
+    strokeWeight(4);
+    stroke(colorNormalStroke);
+    fill(colorNormalFill);
+  }
+
   rect(interactiveAttributePositionX, interactiveAttributePositionY, interactiveAttributeScale, interactiveAttributeScale);
 }
 
+// fonction qui fait la mise à jour de l'animation
 void updateAnimation()
 {
   // mise à jour du séquenceur
@@ -192,17 +215,18 @@ void updateAnimation()
   attributeScale = sequencer.attributeCurrentValueScale;
 
   // dessiner l'élément visuel avec la valeur courante de l'animation
-  stroke(0);
   strokeWeight(4);
-  fill(255);
+  stroke(colorNormalStroke);
+  fill(colorNormalFill);
   rect(attributePositionX, attributePositionY, attributeScale, attributeScale);
 }
 
+// fonction pour sélectionner l'attribut itéractif
 void selectAttribute(int idAttribute)
 {
   // nouvel attribut interactif sélectionné.
   selectedAttribute = idAttribute;
-  
+
   switch (selectedAttribute)
   {
   case 1:
@@ -215,7 +239,7 @@ void selectAttribute(int idAttribute)
   default:
     break;
   }
-  
+
   println("change selected attribute to: " + selectedAttribute);
 }
 
@@ -270,18 +294,21 @@ void keyReleased()
     interpolationMode = 1;
   if (key == '4')
     interpolationMode = 2;
+  if (key == 'i')
+    sequencer.clip.print();
   //if (key == ' ')
   //  saveFrame("render####.png");
 }
 
 void mousePressed()
 {
-  // TODO no alpha
-  
+  isMouseButtonPressed = true;
 }
 
 void mouseReleased()
 {
+  isMouseButtonPressed = false;
+
   // valeur courante des attributs d'animation
   attributePositionX = interactiveAttributePositionX;
   attributePositionY = interactiveAttributePositionY;

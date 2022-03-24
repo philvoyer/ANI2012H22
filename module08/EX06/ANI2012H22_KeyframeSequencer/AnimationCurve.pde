@@ -23,13 +23,13 @@ class AnimationCurve
     if (isActive)
     {
       keyframeCollection.put(keyframeTimestamp, new Keyframe(keyframeTimestamp, keyframeValue));
-      println("add keyframe to animation curve '" + name + "' at timestamp: " + keyframeTimestamp + " with value: " + keyframeValue + " count: " + keyframeCollection.size());
+      println("add keyframe to animation curve '" + name + "' at timestamp: " + keyframeTimestamp + " with value: " + keyframeValue + " keyframe count: " + keyframeCollection.size());
     }
   }
 
   void print()
   {
-    println(" keyframe count: " + keyframeCollection.size());
+    println("keyframe count: " + keyframeCollection.size());
     for (float key : keyframeCollection.keySet()) {
       System.out.println(key + " ,ID = "+ keyframeCollection.get(key) );
     }
