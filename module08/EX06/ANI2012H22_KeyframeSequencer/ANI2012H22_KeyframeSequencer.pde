@@ -1,14 +1,7 @@
 // ANI2012H22_KeyframeSequencer.pde
 // Exemple d'un programme qui simule une animation faite avec des courbes d'animation et des poses clés.
-// ATTENTION : l'exemple est en cours de développement, il n'est pas terminé, mettez le à jour dans quelques heures.
 
-// The TreeMap class sorts the map values in ascending order.
-// It also implements the SortedMap interface internally, so a map instance is created using a new keyword.
-//The interface has the methods:
-//keySet() which returns a set of the keys in ascending order
-//values() which returns a collection of all values in the ascending order of the corresponding keys
-//import java.util.TreeMap;
-
+// importer la librairie Java pour les collections de type dictionnaire ordonnée.
 import java.util.TreeMap;
 
 // paramètres
@@ -41,7 +34,6 @@ int defaultInterpolationMode = 1;
 int defaultSelectedAttribute = 1;
 
 // variables
-
 Sequencer sequencer;
 AnimationClip animationClip;
 
@@ -208,6 +200,7 @@ void updateAnimation()
 
 void selectAttribute(int idAttribute)
 {
+  // nouvel attribut interactif sélectionné.
   selectedAttribute = idAttribute;
   
   switch (selectedAttribute)
@@ -241,7 +234,7 @@ void keyPressed()
       interactiveAttributeScale = constrain(interactiveAttributeScale + interactiveAttributeScaleDelta, interactiveAttributeScaleMin, interactiveAttributeScaleMax);
       break;
     case 3:
-      attributeRotation += 1.0f;
+      interactiveAttributeScale = constrain(interactiveAttributeRotation + interactiveAttributeRotationDelta, interactiveAttributeRotationMin, interactiveAttributeRotationMax);
       break;
 
     default:
