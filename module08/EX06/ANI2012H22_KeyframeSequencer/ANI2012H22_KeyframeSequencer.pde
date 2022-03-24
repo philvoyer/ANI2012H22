@@ -207,8 +207,16 @@ void updatePointer()
     fill(colorNormalFill);
   }
 
+  pushMatrix();
+
+  // appliquer la valeur courante de l'attribut de rotation
+  translate(interactiveAttributePositionX, interactiveAttributePositionY);
+  rotate(interactiveAttributeRotation);
+
   // dessiner un aperçu de l'élément visuel avec la valeur courante des attributs d'animation
-  rect(interactiveAttributePositionX, interactiveAttributePositionY, interactiveAttributeScale, interactiveAttributeScale);
+  rect(0, 0, interactiveAttributeScale, interactiveAttributeScale);
+
+  popMatrix();
 }
 
 // fonction qui fait la mise à jour de l'animation
@@ -227,7 +235,11 @@ void updateAnimation()
   strokeWeight(4);
   stroke(colorNormalStroke);
   fill(colorNormalFill);
-  rect(attributePositionX, attributePositionY, attributeScale, attributeScale);
+  pushMatrix();
+  translate(attributePositionX, attributePositionY);
+  rotate(attributeRotation);
+  rect(0, 0, attributeScale, attributeScale);
+  popMatrix();
 }
 
 // fonction pour sélectionner l'attribut itéractif
