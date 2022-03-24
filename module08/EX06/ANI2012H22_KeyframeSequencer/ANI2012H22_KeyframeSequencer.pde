@@ -234,7 +234,7 @@ void keyPressed()
       interactiveAttributeScale = constrain(interactiveAttributeScale + interactiveAttributeScaleDelta, interactiveAttributeScaleMin, interactiveAttributeScaleMax);
       break;
     case 3:
-      interactiveAttributeScale = constrain(interactiveAttributeRotation + interactiveAttributeRotationDelta, interactiveAttributeRotationMin, interactiveAttributeRotationMax);
+      interactiveAttributeRotation = constrain(interactiveAttributeRotation + interactiveAttributeRotationDelta, interactiveAttributeRotationMin, interactiveAttributeRotationMax);
       break;
 
     default:
