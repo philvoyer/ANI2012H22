@@ -17,13 +17,13 @@ float defaultAttributePositionY;
 float defaultAttributeRotation;
 float defaultAttributeScale = 64.0f;
 
-float interactiveAttributeScaleMin = 0.25f;
-float interactiveAttributeScaleMax = 100.0f;
-float interactiveAttributeScaleDelta = 0.25f;
+float interactiveAttributeScaleMin = 1.00f;
+float interactiveAttributeScaleMax = 1000.0f;
+float interactiveAttributeScaleDelta = 1.00f;
 
-float interactiveAttributeRotationMin = 0.25f;
-float interactiveAttributeRotationMax = 100.0f;
-float interactiveAttributeRotationDelta = 0.25f;
+float interactiveAttributeRotationMin = -PI * 8.0f;
+float interactiveAttributeRotationMax = PI * 8.0f;
+float interactiveAttributeRotationDelta = PI / 32.0f;
 
 float offsetHorizontal = 64.0f;
 
@@ -75,6 +75,9 @@ int interpolationMode = defaultInterpolationMode;
 
 boolean isMouseButtonPressed;
 
+boolean isKeyPressedArrowUp;
+boolean isKeyPressedArrowDown;
+
 void setup()
 {
   size(1024, 512);
@@ -83,7 +86,10 @@ void setup()
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
 
+  // valeurs initiales de certaines variables
   isMouseButtonPressed = false;
+  isKeyPressedArrowUp = false;
+  isKeyPressedArrowDown = false;
 
   // initialiser les variables temporeles
   timeNow = timeLast = timeElapsed = 0.0f;
@@ -129,6 +135,9 @@ void draw()
 
   // mise à jour du pointeur
   updatePointer();
+
+  // mise à jour des attributs interactifs
+  updateAttribute();
 
   // mise à jour de l'animation
   updateAnimation();
@@ -185,13 +194,12 @@ void updatePointer()
   interactiveAttributePositionX = mouseX;
   interactiveAttributePositionY = mouseY;
 
-  // dessiner un aperçu de l'élément visuel avec la valeur courante des attributs d'animation
   if (!isMouseButtonPressed)
   {
     strokeWeight(4);
     stroke(colorPreviewStroke);
     fill(colorPreviewFill);
-  } 
+  }
   else
   {
     strokeWeight(4);
@@ -199,6 +207,7 @@ void updatePointer()
     fill(colorNormalFill);
   }
 
+  // dessiner un aperçu de l'élément visuel avec la valeur courante des attributs d'animation
   rect(interactiveAttributePositionX, interactiveAttributePositionY, interactiveAttributeScale, interactiveAttributeScale);
 }
 
@@ -230,25 +239,33 @@ void selectAttribute(int idAttribute)
   switch (selectedAttribute)
   {
   case 1:
+    println("change selected attribute to: " + selectedAttribute + " (timeline speed)");
     break;
   case 2:
+    println("change selected attribute to: " + selectedAttribute + " (scale)");
     break;
   case 3:
+    println("change selected attribute to: " + selectedAttribute + " (rotation)");
+    break;
+  case 4:
+    interpolationMode = 1;
+    println("change interpolation mode to: 'lerp'");
+    break;
+  case 5:
+    interpolationMode = 2;
+    println("change interpolation mode to: 'smoothstep'");
     break;
 
   default:
     break;
   }
-
-  println("change selected attribute to: " + selectedAttribute);
 }
 
-void keyPressed()
+// fonction pour mettre à jour les attributs interactifs
+void updateAttribute()
 {
-  // modifier la vitesse du temps
-  if (keyCode == UP)
+  if (isKeyPressedArrowUp)
   {
-    //
     switch (selectedAttribute)
     {
     case 1:
@@ -260,12 +277,10 @@ void keyPressed()
     case 3:
       interactiveAttributeRotation = constrain(interactiveAttributeRotation + interactiveAttributeRotationDelta, interactiveAttributeRotationMin, interactiveAttributeRotationMax);
       break;
-
-    default:
-      break;
-    }
+   }
   }
-  if (keyCode == DOWN)
+
+  if (isKeyPressedArrowDown)
   {
     switch (selectedAttribute)
     {
@@ -273,31 +288,43 @@ void keyPressed()
       timeScale = constrain(timeScale - timeScaleDelta, timeScaleMin, timeScaleMax);
       break;
     case 2:
+      interactiveAttributeScale = constrain(interactiveAttributeScale - interactiveAttributeScaleDelta, interactiveAttributeScaleMin, interactiveAttributeScaleMax);
       break;
-    default:
+    case 3:
+      interactiveAttributeRotation = constrain(interactiveAttributeRotation - interactiveAttributeRotationDelta, interactiveAttributeRotationMin, interactiveAttributeRotationMax);
       break;
     }
   }
+}
 
-  // état actif ou inactif de la ligne du temps
-  if (key == ' ')
-    isTimelineActive = !isTimelineActive;
+void keyPressed()
+{
+  if (keyCode == UP)
+    isKeyPressedArrowUp = true;
+  if (keyCode == DOWN)
+    isKeyPressedArrowDown = true;
 }
 
 void keyReleased()
 {
+  if (keyCode == UP)
+    isKeyPressedArrowUp = false;
+  if (keyCode == DOWN)
+    isKeyPressedArrowDown = false;
   if (key == '1')
     selectAttribute(1);
   if (key == '2')
     selectAttribute(2);
   if (key == '3')
-    interpolationMode = 1;
+    selectAttribute(3);
   if (key == '4')
-    interpolationMode = 2;
+    selectAttribute(4);
+  if (key == '5')
+    selectAttribute(4);
   if (key == 'i')
     sequencer.clip.print();
-  //if (key == ' ')
-  //  saveFrame("render####.png");
+  if (key == ' ')
+    isTimelineActive = !isTimelineActive;
 }
 
 void mousePressed()

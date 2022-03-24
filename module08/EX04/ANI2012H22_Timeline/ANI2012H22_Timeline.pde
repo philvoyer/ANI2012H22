@@ -100,7 +100,6 @@ void draw()
   line(timelinePlayheadPosition, timelinePositionStartY - timelineMarkerHalfSize, timelinePlayheadPosition, timelinePositionStartY + timelineMarkerHalfSize);
 
   // afficher le temps courant
-
   text("Temps courant", width/2, height - height/4 - 64);
   text(timelinePlayhead, width/2, height - height/4 - 32);
   text("Vitesse du temps" , width/2, height - height/4);

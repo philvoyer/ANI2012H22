@@ -1,4 +1,4 @@
-// ANI2012H22_KeyframeSequencer/Sequencer.pde //<>// //<>//
+// ANI2012H22_KeyframeSequencer/Sequencer.pde //<>//
 // Classe de type Sequencer
 
 class Sequencer

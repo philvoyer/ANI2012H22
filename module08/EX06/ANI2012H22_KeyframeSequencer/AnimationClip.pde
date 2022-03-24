@@ -21,6 +21,7 @@ class AnimationClip
     print();
   }
   
+  // fonction pour étendre les limites du clip d'animation 
   void updateExtents(float timestamp)
   {
     if (timestamp <= start)
@@ -31,6 +32,7 @@ class AnimationClip
     println("update clip extents to start: " + start + " end: " + end);
   }
 
+  // fonction pour afficher l'état courant du clip d'animation dans la console
   void print()
   {
     int curveIndex = 0;
