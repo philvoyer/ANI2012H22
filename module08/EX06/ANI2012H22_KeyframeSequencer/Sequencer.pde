@@ -1,4 +1,4 @@
-// ANI2012H22_KeyframeSequencer/Sequencer.pde //<>//
+// ANI2012H22_KeyframeSequencer/Sequencer.pde
 // Classe de type Sequencer
 
 class Sequencer
@@ -108,7 +108,8 @@ class Sequencer
           }
         }
         return 0.0f;
-      } else
+      }
+      else
         return 0.0f;
     }
   }
@@ -135,10 +136,5 @@ class Sequencer
       return t = 1.0;
 
     return t = t * t * (3.0f - 2.0f * t);
-  }
-
-  void print()
-  {
-    // println(tag + " = (" + x + " " + y + " " + z +")");
   }
 }

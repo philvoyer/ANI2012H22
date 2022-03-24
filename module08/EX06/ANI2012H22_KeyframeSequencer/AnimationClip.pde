@@ -7,7 +7,7 @@ class AnimationClip
 
   float start = Float.POSITIVE_INFINITY;
   float end = Float.NEGATIVE_INFINITY;
-  
+
   AnimationClip()
   {
     curveCollection = new TreeMap<String, AnimationCurve>();
@@ -20,15 +20,15 @@ class AnimationClip
 
     print();
   }
-  
-  // fonction pour étendre les limites du clip d'animation 
+
+  // fonction pour étendre les limites du clip d'animation
   void updateExtents(float timestamp)
   {
     if (timestamp <= start)
       start = timestamp;
     if (timestamp >= end)
-      end = timestamp;  
-      
+      end = timestamp;
+
     println("update clip extents to start: " + start + " end: " + end);
   }
 
@@ -36,9 +36,12 @@ class AnimationClip
   void print()
   {
     int curveIndex = 0;
+    AnimationCurve animationCurve;
     println("animation clip with extents from start: " + start + " to end: " + end + " and animation curve count: " + curveCollection.size());
     for (String key : curveCollection.keySet()) {
-      println("animation curve " + ++curveIndex + " for attribute: '" + key + "' keyframe count: " + curveCollection.get(key).keyframeCollection.size());
+      animationCurve = curveCollection.get(key);
+      println("animation curve " + ++curveIndex + " for attribute: '" + key + "' keyframe count: " + animationCurve.keyframeCollection.size());
+      animationCurve.print();
     }
   }
 }

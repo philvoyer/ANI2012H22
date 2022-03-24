@@ -12,6 +12,7 @@ class Keyframe
     value = keyframeValue;
   }
 
+  // fonction pour afficher la pose clé dans la console
   void print()
   {
     println("keyframe timestamp: " + timestamp + " value: " + value);

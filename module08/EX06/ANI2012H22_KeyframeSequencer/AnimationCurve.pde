@@ -6,11 +6,11 @@ class AnimationCurve
   TreeMap<Float, Keyframe> keyframeCollection;
 
   boolean isActive;
-  
+
   String name;
-  
+
   Keyframe currentKeyframe;
-  
+
   AnimationCurve(String attributeName)
   {
     keyframeCollection = new TreeMap<Float, Keyframe>();
@@ -18,6 +18,7 @@ class AnimationCurve
     name = attributeName;
   }
 
+  // fonction pour ajouter une pose clé dans la courbe d'animation
   void addKeyframe(float keyframeTimestamp, float keyframeValue)
   {
     if (isActive)
@@ -27,11 +28,14 @@ class AnimationCurve
     }
   }
 
+  // fonction pour afficher les poses clés de la courbe d'animation dans la console
   void print()
   {
-    println("keyframe count: " + keyframeCollection.size());
+    int keyframeIndex = 0;
+    Keyframe keyframe;
     for (float key : keyframeCollection.keySet()) {
-      System.out.println(key + " ,ID = "+ keyframeCollection.get(key) );
+      keyframe = keyframeCollection.get(key);
+      println("keyframe " + ++keyframeIndex + " timestamp: " + keyframe.timestamp + " value: " + keyframe.value);
     }
   }
 }
