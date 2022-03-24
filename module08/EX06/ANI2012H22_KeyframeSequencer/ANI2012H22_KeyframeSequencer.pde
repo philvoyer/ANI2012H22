@@ -332,7 +332,7 @@ void keyReleased()
   if (key == '4')
     selectAttribute(4);
   if (key == '5')
-    selectAttribute(4);
+    selectAttribute(5);
   if (key == 'i')
     sequencer.clip.print();
   if (key == ' ')
