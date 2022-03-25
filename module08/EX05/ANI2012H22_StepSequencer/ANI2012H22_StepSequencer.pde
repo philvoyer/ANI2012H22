@@ -1,6 +1,6 @@
 // ANI2012H22_StepSequencer.pde
 // Exemple d'un programme qui simule un 'step sequencer',
-// qui permet de jouer un échantillon à chaque étape si le bouton est activé.
+// qui permet de jouer un son à chaque étape si le bouton est activé.
 // Dépendance: Sound 2.3.1 | Provides a simple way to work with audio.
 
 import processing.sound.*;
@@ -9,6 +9,9 @@ import processing.sound.*;
 int stepCount = 8;
 
 boolean[] buttonStateActive = {true, false, true, false, true, false, true, true};
+boolean[] buttonStatePlayed = {false, false, false, false, false, false, false, false};
+
+boolean useSoundSampleOrSynthesizer = true;
 
 float timelineDuration = 8.0f;
 
@@ -52,8 +55,6 @@ float timeNow;
 float timeLast;
 float timeElapsed;
 float timeScale;
-
-boolean isPlayingSound;
 
 void setup()
 {
@@ -117,6 +118,10 @@ void draw()
     {
       // retrancher le temps écoulé
       timelinePlayhead -= timelineDuration;
+
+      // réinitialiser les boutons
+      for (int index = 0; index < stepCount; ++index)
+        buttonStatePlayed[index] = false;
     }
   }
 
@@ -149,23 +154,45 @@ void draw()
   // dessiner les boutons du séquenceur
   strokeWeight(4);
 
-  isPlayingSound = false;
-
+  // itération sur chacun des boutons
   for (int index = 0; index < stepCount; ++index)
   {
+    // calculer la position du début du bouton
     buttonPositionX = timelinePositionStartX + buttonSize * index;
 
+    // valider si le bouton à cet index est actif
     if (buttonStateActive[index])
     {
+      // valider si la tête de lecture de la ligne du temps est dans le bouton courant
       if (timelinePlayheadPosition >= buttonPositionX && timelinePlayheadPosition < buttonPositionX + buttonSize)
       {
-        //beat.play();
-        fill(buttonColorPlay);
-        if (timelinePlayheadPosition < buttonPositionX + buttonSize - buttonSize/8)
+        // jouer un son car le bouton où se trouve la tête de lecture de la ligne du temps est actif
+        if (useSoundSampleOrSynthesizer)
         {
-          isPlayingSound = true;
-          // playNote(440.0f);
+          if (!buttonStatePlayed[index])
+          {
+            // jouer un échantillon audio à partir d'un fichier externe
+            beat.play();
+            buttonStatePlayed[index] = true;
+          }
         }
+        else
+        {
+          if (!buttonStatePlayed[index])
+          {
+            // jouer une fréquence avec le synthétiseur
+            playNote(440.0f);
+            buttonStatePlayed[index] = true;
+          }
+          else
+          {
+            // arrêter le synthétiseur un peu avant la fin du bouton
+            if (timelinePlayheadPosition >= buttonPositionX + buttonSize - buttonSize/8)
+              oscillator.stop();
+          }
+        }
+
+        fill(buttonColorPlay);
       }
       else
         fill(buttonColorOn);
@@ -175,9 +202,6 @@ void draw()
 
     rect(buttonPositionX, buttonPositionY, buttonSize, buttonSize);
   }
-
-  // if (!isPlayingSound)
-  //     oscillator.stop();
 
   // afficher le BPM
   fill(255);
@@ -194,6 +218,17 @@ void playNote(float f)
   oscillator.pan(panning);
 
   oscillator.play();
+}
+
+// fonction pour changer l'état d'un bouton
+void toggleButtonState(int buttonIndex)
+{
+  if (buttonIndex < 0 || buttonIndex >= stepCount)
+    return;
+
+  println("toggle button " + (buttonIndex + 1) + " state from: " + buttonStateActive[buttonIndex] + " to: " + !buttonStateActive[buttonIndex]);
+
+  buttonStateActive[buttonIndex] = !buttonStateActive[buttonIndex];
 }
 
 void keyPressed()
@@ -235,5 +270,37 @@ void mouseReleased()
         return;
       }
     }
+  }
+}
+
+void keyReleased()
+{
+  if (key == '1')
+    toggleButtonState(0);
+  if (key == '2')
+    toggleButtonState(1);
+  if (key == '3')
+    toggleButtonState(2);
+  if (key == '4')
+    toggleButtonState(3);
+  if (key == '5')
+    toggleButtonState(4);
+  if (key == '6')
+    toggleButtonState(5);
+  if (key == '7')
+    toggleButtonState(6);
+  if (key == '8')
+    toggleButtonState(7);
+  if (key == '9')
+  {
+    useSoundSampleOrSynthesizer = true;
+    oscillator.stop();
+    println("utiliser l'échantillon audio");
+  }
+  if (key == '0')
+  {
+    useSoundSampleOrSynthesizer = false;
+    oscillator.stop();
+    println("utiliser le synthétiseur");
   }
 }
