@@ -1,4 +1,4 @@
-// ANI2012H22_Vector3D/Vector3D.pde
+// ANI2012H22_Particles/Vector3D.pde
 // Classe de type Vector3D (un vecteur en 3 dimensions).
 // Cette classe peut aussi fonctionner en 2 dimensions,
 // simplement ignorer la composante en Z et la laisser à 0.
