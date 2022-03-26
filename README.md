@@ -44,3 +44,6 @@ Concepts théoriques en lien avec la programmation orientée objet et les collec
 
 Programmation appliquée à la création et la manipulation de lignes du temps, de poses clés, de courbes d'animation et d'interpolations entre des valeurs numériques.
 
+## Module 9 : Génératif
+
+Présentation de différents types de systèmes dynamiques utilisés pour la génération procédurale de contenu visuel et animé.
