@@ -120,10 +120,10 @@ void keyReleased()
   reset();
 }
 
-void fade(float decay)
+void fade(float intensity)
 {
   rectMode(CORNER);
   noStroke();
-  fill(colorBack, decay);
+  fill(colorBack, intensity);
   rect(0, 0, width, height);
 }
