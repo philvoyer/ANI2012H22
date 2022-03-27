@@ -5,6 +5,8 @@
 float amplitude = 256.0f;
 float period = 5000.0f;
 
+color colorBack = color(0);
+
 // variables
 Ball ball;
 
@@ -67,9 +69,11 @@ class Ball
   }
 }
 
-void fade(float decay)
+void fade(float intensity)
 {
-  fill(0, decay);
+  rectMode(CORNER);
+  noStroke();
+  fill(colorBack, intensity);
   rect(0, 0, width, height);
 }
 
