@@ -229,11 +229,11 @@ void drawCurve()
     random(0.0f, 1.0f) * height);
 }
 
-void fade(float decay)
+void fade(float intensity)
 {
   rectMode(CORNER);
   noStroke();
-  fill(colorBack, decay);
+  fill(colorBack, intensity);
   rect(0, 0, width, height);
 }
 
