@@ -85,6 +85,7 @@ void beat()
 
 void fade(float intensity)
 {
+  rectMode(CORNER);
   noStroke();
   fill(colorBack, intensity);
   rect(0, 0, width, height);
