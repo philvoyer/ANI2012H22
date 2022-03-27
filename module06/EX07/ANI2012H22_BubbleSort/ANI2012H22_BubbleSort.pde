@@ -51,6 +51,7 @@ class Ball
 int count = 20;
 float speed = 0.075f;
 float threshold = 1.0f;
+color colorBack = color(127);
 
 // variables
 int index;
@@ -224,9 +225,11 @@ void bubbleSort()
   randomize();
 }
 
-void fade(float decay)
+void fade(float intensity)
 {
-  fill(127, decay);
+  rectMode(CORNER);
+  noStroke();
+  fill(colorBack, intensity);
   rect(0, 0, width, height);
 }
 
