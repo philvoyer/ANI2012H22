@@ -38,6 +38,9 @@ void draw()
 // fonction qui atténue progressivement le contenu de la fenêtre
 void fade(float intensity)
 {
+  // origine du rectangle dans le coin supérieur gauche
+  rectMode(CORNER);
+
   // pas de ligne de contour
   noStroke();
 
