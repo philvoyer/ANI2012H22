@@ -75,6 +75,8 @@ class FadingBall extends Ball
 // paramètre
 int period = 5000;
 
+color colorBack = color(0);
+
 // variables
 int index;
 
@@ -122,9 +124,11 @@ void draw()
   }
 }
 
-void fade(float decay)
+void fade(float intensity)
 {
-  fill(0, decay);
+  rectMode(CORNER);
+  noStroke();
+  fill(colorBack, intensity);
   rect(0, 0, width, height);
 }
 
