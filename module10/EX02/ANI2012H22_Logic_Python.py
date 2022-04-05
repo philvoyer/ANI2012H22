@@ -1,4 +1,4 @@
-# ANI2012A22_Logic_Python.py | Programmation Python avec Maya | coding=utf-8
+# ANI2012H22_Logic_Python.py | Programmation Python avec Maya | coding=utf-8
 # Exemples de structures de contrôle logiques.
 
 # variables

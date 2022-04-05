@@ -1,4 +1,4 @@
-// ANI2012A22_Logic_Java.java | Programmation Java avec Processing
+// ANI2012H22_Logic_Java.java | Programmation Java avec Processing
 // Exemples de structures de contrôle logiques.
 
 // variables

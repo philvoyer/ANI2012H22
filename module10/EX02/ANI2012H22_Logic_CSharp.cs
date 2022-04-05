@@ -1,4 +1,4 @@
-// ANI2012A22_Logic_CSharp.cs | Programmation C# avec Unity
+// ANI2012H22_Logic_CSharp.cs | Programmation C# avec Unity
 // Exemples de structures de contrôle logiques.
 
 using System;
