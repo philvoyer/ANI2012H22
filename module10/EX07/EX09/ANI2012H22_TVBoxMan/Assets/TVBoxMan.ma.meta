@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: def228b0291694e2bb0af55b87a7f8d6
+timeCreated: 1448648306
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BoxManMesh
+    100002: Origin
+    100004: polySurface5
+    100006: polySurface6
+    100008: SK_Head
+    100010: SK_Hips
+    100012: SK_LeftAnkle
+    100014: SK_LeftArm
+    100016: SK_LeftElbow
+    100018: SK_LeftFoot
+    100020: SK_LeftHand
+    100022: SK_LeftKnee
+    100024: SK_LeftShoulder
+    100026: SK_Neck
+    100028: SK_RightAnkle
+    100030: SK_RightArm
+    100032: SK_RightElbow
+    100034: SK_RightFoot
+    100036: SK_RightHand
+    100038: SK_RightKnee
+    100040: SK_RightShoulder
+    100042: SK_Spine
+    100044: SK_Torso
+    100046: transform7
+    100048: transform8
+    100050: //RootNode
+    100052: TVBoxMan
+    400000: BoxManMesh
+    400002: Origin
+    400004: polySurface5
+    400006: polySurface6
+    400008: SK_Head
+    400010: SK_Hips
+    400012: SK_LeftAnkle
+    400014: SK_LeftArm
+    400016: SK_LeftElbow
+    400018: SK_LeftFoot
+    400020: SK_LeftHand
+    400022: SK_LeftKnee
+    400024: SK_LeftShoulder
+    400026: SK_Neck
+    400028: SK_RightAnkle
+    400030: SK_RightArm
+    400032: SK_RightElbow
+    400034: SK_RightFoot
+    400036: SK_RightHand
+    400038: SK_RightKnee
+    400040: SK_RightShoulder
+    400042: SK_Spine
+    400044: SK_Torso
+    400046: transform7
+    400048: transform8
+    400050: //RootNode
+    400052: TVBoxMan
+    4300000: BoxManMesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: BoxManMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
