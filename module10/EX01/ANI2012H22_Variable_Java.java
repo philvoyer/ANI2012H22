@@ -1,4 +1,4 @@
-// ANI2012A22_Variable_Java.java | Programmation Java avec Processing
+// ANI2012H22_Variable_Java.java | Programmation Java avec Processing
 // Exemples de déclarations et d'initialisations de variables de types primitifs.
 
 // 1. variable de type booléen

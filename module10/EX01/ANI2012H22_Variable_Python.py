@@ -1,4 +1,4 @@
-# ANI2012A22_Variable_Python.py | Programmation Python avec Maya | coding=utf-8
+# ANI2012H22_Variable_Python.py | Programmation Python avec Maya | coding=utf-8
 # Exemples de déclarations et d'initialisations de variables de types primitifs.
 
 # 1. variable de type booléen

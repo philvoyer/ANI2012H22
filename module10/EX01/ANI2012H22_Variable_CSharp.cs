@@ -1,4 +1,4 @@
-// ANI2012A22_Variable_CSharp.cs | Programmation C# avec Unity
+// ANI2012H22_Variable_CSharp.cs | Programmation C# avec Unity
 // Exemples de déclarations et d'initialisations de variables de types primitifs.
 
 using System;
