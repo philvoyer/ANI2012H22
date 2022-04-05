@@ -4,7 +4,7 @@
 using System;
 using UnityEngine;
 
-public class ANI2012A20_Logic_CSharp : MonoBehaviour
+public class ANI2012H22_Logic_CSharp : MonoBehaviour
 {
   void Start()
   {
