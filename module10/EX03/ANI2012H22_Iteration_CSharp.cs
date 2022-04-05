@@ -1,4 +1,4 @@
-// ANI2012A22_Iteration_CSharp.cs | Programmation C# avec Unity
+// ANI2012H22_Iteration_CSharp.cs | Programmation C# avec Unity
 // Exemples de structures de contrôle itératives.
 
 using System;
