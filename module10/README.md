@@ -24,15 +24,89 @@ Cet exemple présente une comparaison des points en commun au niveau sémantique
 
 ### Exemple 10.6 (Python + Maya)
 
-#### Exemple 10.6.1 ()
-#### Exemple 10.6.2 ()
-#### Exemple 10.6.3 ()
-#### Exemple 10.6.4 ()
-#### Exemple 10.6.5 ()
-#### Exemple 10.6.6 ()
-#### Exemple 10.6.7 ()
-#### Exemple 10.6.8 ()
-#### Exemple 10.6.9 ()
+#### Exemple 10.6.1 (GeneratePrimitive)
+
+Un script **Python** peut invoquer les fonctionnalités de création de contenu de **Maya** pour par exemple générer procéduralement des maillages géométriques 3D comme des cubes, des sphères ou tous autres types de géométries offertes par le logiciel.
+
+#### Exemple 10.6.2 (Collection)
+
+Ce script *Python* pour *Maya* présente des exemples de manipulations de différents types de collection comme le tuple, la liste et le dictionnaire.
+
+#### Exemple 10.6.3 (Selection)
+
+Ce script *Python* pour *Maya* présente des exemples en lien avec l'énumération et la sélection d'éléments présents dans une scène.
+
+#### Exemple 10.6.4 (Attribute)
+
+Ce script *Python* pour *Maya* présente des manipulations d'attributs d'animation assignés à des noeuds dans une scène.
+
+#### Exemple 10.6.5 (Keyframe)
+
+En animation, la pratique courante est de créer manuellement des poses clés sur une ligne de temps à partir de l'interface d'un logiciel comme *Maya*.
+
+Il est aussi possible de créer et modifier des poses clés par programmation à partir d'un langage de script comme *Python*.
+
+Entre autres, la plupart des éléments présents dans une scène peuvent être animés par des poses clés sur leurs attributs de transformation géométrique (translation, rotation et proportion).
+
+La valeur courante des posés clés d'un élément sélectionné peut être visualisée dans *Maya* avec un outil qui s'appelle le *Graph Editor* (menu *Windows > Animation Editors > Graph Editor*).
+
+##### Exemple 10.6.1
+
+Générer une séquence d'animation par transformation de l'attribut de translation.
+
+##### Exemple 10.6.2
+
+Générer une séquence d'animation par transformation de l'attribut de rotation.
+
+##### Exemple 10.6.3
+
+Générer une séquence d'animation par transformation de l'attribut de proportion.
+
+#### Exemple 10.6.6 (Timeline)
+
+Un des avantages de l'utilisation de script *Python* avec *Maya* est de pouvoir utiliser des algorithmes pour générer ou modifier des séquences de poses clés.
+
+Le premier et le second exemple présentent des programmes qui utilisent des fonctions mathématiques pour contrôler l'interpolation de la valeur numérique d'attributs de transformation sur une ligne de temps.
+
+Le troisième montre comment pourrait être générée une séquence de lignes de temps contenant chacune un ensemble de poses clés.
+
+##### Exemple 10.6.6.1
+
+Création d'une séquence d'animation par oscillation de différents attributs.
+
+La fonction trigonométrique sinus est utilisée pour générer une valeur numérique qui oscille de manière périodique en fonction d'une fréquence et d'une amplitude.
+
+##### Exemple 10.6.6.2
+
+Exemples d'interpolations de valeurs numériques avec les fonctions `lerp` et `smoothstep`.
+
+La fonction `lerp` est une interpolation linéaire entre deux valeurs numériques en fonction d'un paramètre de temps normalisé dans l'intervalle entre zéro et un.
+
+La fonction `smoothstep` est une interpolation avec accélération et décélération entre deux valeurs numériques en fonction d'un paramètre de temps normalisé dans l'intervalle entre zéro et un.
+
+Les fonctions de cet exemple opèrent sur des variables numériques scalaires, mais il est aussi possible d'appliquer les mêmes algorithmes pour faire des interpolations avec des vecteurs de deux ou trois dimensions, ce qui est fort utile pour la transformation dans un espace 2D ou 3D.
+
+##### Exemple 10.6.6.3
+
+Exemple de programme qui fait la création d'une animation constituée de deux lignes de temps qui contiennent des séquences de poses clés avec des valeurs aléatoires.
+
+L'idée est de construire une abstraction du concept de ligne de temps et d'utiliser des instances de classes et des collections pour organiser les poses clés.
+
+Les données d'animation sont d'abord assemblées dans des instances de classes (`Animation`, `Timeline` et `Keyframe`).
+
+Ensuite, les posés clés de notre système de lignes de temps sont injectées dans le système d'animation de *Maya* par la fonction `bake`.
+
+#### Exemple 10.6.7 (TextInput)
+
+Dans cet exemple, un programme *Python* génère dans *Maya* des interfaces graphiques simples qui permettent de demander à l'utilisateur de saisir une information au clavier, information qui est ensuite retournée au programme qui peut ensuite l'utiliser comme données pour ses algorithmes.
+
+#### Exemple 10.6.8 (Duplicator)
+
+Dans cet exemple, un programme *Python* génère dans *Maya* l'interface graphique d'un outil qui permet de dupliquer un élément sélectionné.
+
+#### Exemple 10.6.9 (Editor)
+
+Dans cet exemple, un programme *Python* génère dans *Maya* l'interface graphique d'un outil offrant diverses fonctionnalités telles que : assignation de transformations géométrique, assignation d'une couleur de sommet, validation ajout et retrait d'un attribut, diverses commandes à activer avec un bouton ainsi que la sauvegarde et le chargement de données dans un fichier externe.
 
 ### Exemple 10.7 (C# + Unity)
 
