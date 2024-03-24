@@ -1,4 +1,4 @@
-# Module 8 : Transformation
+# Module 8 : Timing
 
 Références du module 8.
 
