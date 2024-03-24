@@ -9,7 +9,7 @@ int colorStroke = 255;
 int colorFill = 127;
 int colorBack = 31;
 
-float period = 50000.0f;
+float frequency = 50000.0f;
 float radius = 16.0f;
 
 float scaleFactor = 0.66f;
@@ -39,7 +39,7 @@ void draw()
   tentacle(height / 3.0f, 0);
 
   // oscillation de l'angle de rotation
-  angle = oscillate(millis(), PI * 4.0f, period);
+  angle = oscillate(millis(), PI * 4.0f, frequency);
 }
 
 // fonction récursive qui dessine un tentacule en plusieurs segments
@@ -84,9 +84,9 @@ void keyReleased()
   println("current depth : " + depthCurrent);
 }
 
-float oscillate(float time, float amplitude, float period)
+float oscillate(float time, float amplitude, float frequency)
 {
-  return amplitude * sin(time * 2.0f * PI / period);
+  return amplitude * sin(time * 2.0f * PI / frequency);
 }
 
 void fade(float intensity)
