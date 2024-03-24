@@ -117,7 +117,7 @@ void drawArrow(float x, float y, float w, float h, float angle)
 
   pushMatrix();
 
-  translate(x,y);
+  translate(x, y);
   rotate(angle);
 
   beginShape();
